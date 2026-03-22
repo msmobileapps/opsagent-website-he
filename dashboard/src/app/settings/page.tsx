@@ -59,7 +59,7 @@ export default function SettingsPage() {
         <p className="text-sm text-gray-500 mt-1">Configure agents, notifications, and billing</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Agent Schedules */}
         <div className="bg-surface-raised border border-surface-border rounded-xl p-5">
           <div className="flex items-center gap-2 mb-5">
@@ -146,7 +146,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Billing section — full width */}
-      <div className="mt-6 grid grid-cols-2 gap-6">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Plan & Usage */}
         <div className="bg-surface-raised border border-surface-border rounded-xl p-5">
           <div className="flex items-center justify-between mb-5">

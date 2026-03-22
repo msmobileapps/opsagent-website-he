@@ -30,7 +30,7 @@ export default function MetricsPage() {
                 <h2 className="text-lg font-semibold text-white">{dept.department}</h2>
               </div>
 
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {dept.kpis.map(kpi => (
                   <div
                     key={kpi.label}

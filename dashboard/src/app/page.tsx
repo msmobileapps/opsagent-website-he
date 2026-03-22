@@ -148,16 +148,16 @@ export default function OverviewPage() {
       </div>
 
       {/* Stats row */}
-      <div className="grid grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <StatCard icon={Zap} label="Active Agents" value={initialAgents.length} sub="Across 5 departments" />
         <StatCard icon={Activity} label="Running Now" value={running} sub={running > 0 ? 'Processing tasks' : 'All idle'} />
         <StatCard icon={CheckCircle2} label="Today's Runs" value={todayLogs.length} sub="Completed today" />
         <StatCard icon={Clock} label="Success Rate" value={`${successRate}%`} sub="Last 30 days" />
       </div>
 
-      <div className="grid grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Left: Approvals & Attention — 3 cols */}
-        <div className="col-span-3">
+        <div className="lg:col-span-3">
           <div className="flex items-center gap-2 mb-4">
             <AlertTriangle className="w-4 h-4 text-yellow-400" />
             <h2 className="text-lg font-semibold text-white">Needs Your Attention</h2>
@@ -213,7 +213,7 @@ export default function OverviewPage() {
         </div>
 
         {/* Right: Recent Documents — 2 cols */}
-        <div className="col-span-2">
+        <div className="lg:col-span-2">
           <div className="flex items-center gap-2 mb-4">
             <FileText className="w-4 h-4 text-brand-400" />
             <h2 className="text-lg font-semibold text-white">Recent Documents</h2>

@@ -75,7 +75,7 @@ export default function AgentsPage() {
         <p className="text-sm text-gray-500 mt-1">Click an agent to view output and manage schedule</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {agents.map(agent => (
           <AgentCard
             key={agent.id}
