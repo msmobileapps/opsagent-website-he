@@ -1,12 +1,13 @@
 import { departmentMetrics } from '@/lib/mock-data';
 import { Sparkline } from '@/components/sparkline';
-import { TrendingUp, Users, Wallet, Megaphone } from 'lucide-react';
+import { TrendingUp, Users, Wallet, Megaphone, Settings } from 'lucide-react';
 
 const icons: Record<string, React.ComponentType<{ className?: string }>> = {
   'trending-up': TrendingUp,
   users: Users,
   wallet: Wallet,
   megaphone: Megaphone,
+  settings: Settings,
 };
 
 export default function MetricsPage() {

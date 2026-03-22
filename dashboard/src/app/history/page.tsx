@@ -5,7 +5,7 @@ import { executionLogs } from '@/lib/mock-data';
 import { ExecutionLogItem } from '@/components/execution-log';
 import { clsx } from 'clsx';
 
-const departments = ['All', 'Sales', 'HR', 'Finance', 'Marketing'];
+const departments = ['All', 'Sales', 'HR', 'Finance', 'Marketing', 'Operations'];
 
 export default function HistoryPage() {
   const [filter, setFilter] = useState('All');

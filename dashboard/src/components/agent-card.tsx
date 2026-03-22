@@ -1,5 +1,8 @@
+'use client';
+
 import { Agent } from '@/lib/types';
 import { StatusBadge } from './status-badge';
+import { clsx } from 'clsx';
 import {
   Target,
   Send,
@@ -7,6 +10,13 @@ import {
   Receipt,
   FileCheck,
   Megaphone,
+  FileText,
+  ClipboardList,
+  Mail,
+  Calendar,
+  Play,
+  Square,
+  Clock,
 } from 'lucide-react';
 
 const icons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -16,6 +26,10 @@ const icons: Record<string, React.ComponentType<{ className?: string }>> = {
   receipt: Receipt,
   'file-check': FileCheck,
   megaphone: Megaphone,
+  'file-text': FileText,
+  'clipboard-list': ClipboardList,
+  mail: Mail,
+  calendar: Calendar,
 };
 
 function timeAgo(dateStr: string | null): string {
@@ -28,8 +42,18 @@ function timeAgo(dateStr: string | null): string {
   return 'Just now';
 }
 
-export function AgentCard({ agent, compact }: { agent: Agent; compact?: boolean }) {
+interface AgentCardProps {
+  agent: Agent;
+  compact?: boolean;
+  onStart?: (id: string) => void;
+  onStop?: (id: string) => void;
+  onEditSchedule?: (id: string) => void;
+  onClick?: (id: string) => void;
+}
+
+export function AgentCard({ agent, compact, onStart, onStop, onEditSchedule, onClick }: AgentCardProps) {
   const Icon = icons[agent.icon] || Target;
+  const isRunning = agent.status === 'running';
 
   if (compact) {
     return (
@@ -46,7 +70,7 @@ export function AgentCard({ agent, compact }: { agent: Agent; compact?: boolean 
           </div>
           <StatusBadge status={agent.status} />
         </div>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-3 mb-3">
           {agent.metrics.map((m) => (
             <div key={m.label}>
               <p className="text-xs text-gray-500 truncate">{m.label}</p>
@@ -59,12 +83,39 @@ export function AgentCard({ agent, compact }: { agent: Agent; compact?: boolean 
             </div>
           ))}
         </div>
+        {(onStart || onStop) && (
+          <div className="flex gap-2 pt-3 border-t border-surface-border">
+            {isRunning ? (
+              <button
+                onClick={() => onStop?.(agent.id)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-red-400 bg-red-500/10 hover:bg-red-500/20 transition-colors"
+              >
+                <Square className="w-3 h-3" />
+                Stop
+              </button>
+            ) : (
+              <button
+                onClick={() => onStart?.(agent.id)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-accent-400 bg-accent-500/10 hover:bg-accent-500/20 transition-colors"
+              >
+                <Play className="w-3 h-3" />
+                Run Now
+              </button>
+            )}
+          </div>
+        )}
       </div>
     );
   }
 
   return (
-    <div className="bg-surface-raised border border-surface-border rounded-xl p-5 hover:border-brand-500/30 transition-all duration-200">
+    <div
+      className={clsx(
+        'bg-surface-raised border border-surface-border rounded-xl p-5 hover:border-brand-500/30 transition-all duration-200',
+        onClick && 'cursor-pointer'
+      )}
+      onClick={() => onClick?.(agent.id)}
+    >
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center">
@@ -94,10 +145,40 @@ export function AgentCard({ agent, compact }: { agent: Agent; compact?: boolean 
         ))}
       </div>
 
-      <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-surface-border">
+      <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-surface-border mb-3">
         <span>Last run: {timeAgo(agent.lastRun)}</span>
         <span>{agent.schedule}</span>
       </div>
+
+      {/* Action buttons */}
+      {(onStart || onStop || onEditSchedule) && (
+        <div className="flex gap-2" onClick={e => e.stopPropagation()}>
+          {isRunning ? (
+            <button
+              onClick={() => onStop?.(agent.id)}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-red-400 bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 transition-colors"
+            >
+              <Square className="w-3.5 h-3.5" />
+              Stop
+            </button>
+          ) : (
+            <button
+              onClick={() => onStart?.(agent.id)}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-accent-400 bg-accent-500/10 hover:bg-accent-500/20 border border-accent-500/20 transition-colors"
+            >
+              <Play className="w-3.5 h-3.5" />
+              Run Now
+            </button>
+          )}
+          <button
+            onClick={() => onEditSchedule?.(agent.id)}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-brand-400 bg-brand-500/10 hover:bg-brand-500/20 border border-brand-500/20 transition-colors"
+          >
+            <Clock className="w-3.5 h-3.5" />
+            Schedule
+          </button>
+        </div>
+      )}
     </div>
   );
 }
