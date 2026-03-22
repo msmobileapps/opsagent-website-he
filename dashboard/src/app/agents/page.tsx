@@ -15,7 +15,7 @@ export default function AgentsPage() {
   const agents = api.connected ? api.agents : mockAgents;
   const [editingAgent, setEditingAgent] = useState<Agent | null>(null);
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
-  const [runOutput, setRunOutput] = useState<string[]>([]);
+  const [, setRunOutput] = useState<string[]>([]);
 
   const handleStart = async (id: string) => {
     const agent = agents.find(a => a.id === id);

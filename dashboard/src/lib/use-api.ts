@@ -10,7 +10,6 @@ import {
   stopAgent as apiStopAgent,
   updateSchedule as apiUpdateSchedule,
   runAgentStream,
-  checkConnection,
   ApiAgentStatus,
 } from './api';
 
