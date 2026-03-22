@@ -13,11 +13,15 @@ import {
   Zap,
   Menu,
   X,
+  FileText,
+  ShieldCheck,
 } from 'lucide-react';
 
 const nav = [
   { href: '/', label: 'Overview', icon: LayoutDashboard },
   { href: '/agents', label: 'Agents', icon: Bot },
+  { href: '/documents', label: 'Documents', icon: FileText },
+  { href: '/approvals', label: 'Approvals', icon: ShieldCheck },
   { href: '/history', label: 'History', icon: History },
   { href: '/metrics', label: 'Metrics', icon: BarChart3 },
   { href: '/settings', label: 'Settings', icon: Settings },
