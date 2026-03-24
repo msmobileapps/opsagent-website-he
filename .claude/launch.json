@@ -21,8 +21,8 @@
     },
     {
       "name": "poc-dashboard",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "dashboard", "run", "dev", "--", "-p", "3100"],
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--prefix", "dashboard", "next", "dev", "-p", "3100"],
       "port": 3100
     },
     {

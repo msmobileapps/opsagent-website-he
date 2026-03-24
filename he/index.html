@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpsAgent — אוטומציית תפעול מונעת בינה מלאכותית לעסקים צומחים</title>
+    <meta name="description" content="OpsAgent מחליף את הבק-אופיס שלכם בסוכני AI שבאמת עובדים. ניהול לידים, אאוטריצ׳ מכירות, גיוס, פיננסים ותוכן — הכל אוטומטי.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #6C3AED;
@@ -23,11 +27,7 @@
             --gradient-cta: linear-gradient(135deg, #6C3AED 0%, #8B5CF6 100%);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -97,9 +97,7 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--white);
-        }
+        .nav-links a:hover { color: var(--white); }
 
         .lang-switch {
             display: inline-flex;
@@ -240,12 +238,8 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         .hero h1 {
@@ -285,9 +279,7 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .hero-stat {
-            text-align: center;
-        }
+        .hero-stat { text-align: center; }
 
         .hero-stat .number {
             font-size: 2rem;
@@ -305,104 +297,18 @@
         /* Hero Visual */
         .hero-visual {
             position: relative;
+            max-width: 560px;
+            margin: 0 auto;
         }
 
-        .dashboard-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.1);
+        .hero-visual img {
+            width: 100%;
             border-radius: 20px;
-            padding: 2rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .dashboard-title {
-            color: var(--white);
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .status-live {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--accent);
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .status-live .dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        .agent-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.75rem 1rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 12px;
-            margin-bottom: 0.5rem;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .agent-info {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .agent-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-        }
-
-        .agent-name {
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .agent-status {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .agent-result {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 0.85rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         /* ===== SECTIONS ===== */
-        section {
-            padding: 6rem 2rem;
-        }
+        section { padding: 6rem 2rem; }
 
         .section-inner {
             max-width: 1200px;
@@ -439,9 +345,7 @@
         }
 
         /* ===== PROBLEM ===== */
-        .problem {
-            background: var(--gray-100);
-        }
+        .problem { background: var(--gray-100); }
 
         .problem-grid {
             display: grid;
@@ -462,10 +366,7 @@
             box-shadow: 0 12px 40px rgba(0,0,0,0.08);
         }
 
-        .problem-card .icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+        .problem-card .icon { font-size: 2rem; margin-bottom: 1rem; }
 
         .problem-card h3 {
             font-size: 1.2rem;
@@ -509,9 +410,7 @@
             transition: opacity 0.3s;
         }
 
-        .service-card:hover::before {
-            opacity: 1;
-        }
+        .service-card:hover::before { opacity: 1; }
 
         .service-card:hover {
             transform: translateY(-6px);
@@ -543,9 +442,7 @@
             margin-bottom: 1.25rem;
         }
 
-        .service-features {
-            list-style: none;
-        }
+        .service-features { list-style: none; }
 
         .service-features li {
             font-size: 0.85rem;
@@ -568,25 +465,18 @@
             color: var(--white);
         }
 
-        .how-it-works .section-header h2 {
-            color: var(--white);
-        }
-
-        .how-it-works .section-header p {
-            color: rgba(255,255,255,0.6);
-        }
+        .how-it-works .section-header h2 { color: var(--white); }
+        .how-it-works .section-header p { color: rgba(255,255,255,0.6); }
 
         .steps {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            position: relative;
         }
 
         .step {
             text-align: center;
             padding: 2rem;
-            position: relative;
         }
 
         .step-number {
@@ -665,9 +555,7 @@
         }
 
         /* ===== PRICING ===== */
-        .pricing {
-            background: var(--gray-100);
-        }
+        .pricing { background: var(--gray-100); }
 
         .pricing-grid {
             display: grid;
@@ -811,9 +699,7 @@
             transition: color 0.2s;
         }
 
-        .footer-links a:hover {
-            color: var(--white);
-        }
+        .footer-links a:hover { color: var(--white); }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 968px) {
@@ -822,55 +708,25 @@
                 text-align: center;
             }
 
-            .hero p {
-                margin: 0 auto 2rem;
-            }
-
-            .hero-ctas {
-                justify-content: center;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                margin-top: 2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            .hero p { margin: 0 auto 2rem; }
+            .hero-ctas { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .hero-visual { margin-top: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
 
             .problem-grid, .services-grid, .steps, .pricing-grid {
                 grid-template-columns: 1fr;
             }
 
-            .proof-card {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .nav-links {
-                display: none;
-            }
+            .proof-card { grid-template-columns: 1fr; }
+            .pricing-card.featured { transform: none; }
+            .nav-links { display: none; }
         }
 
         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 4rem 1.25rem;
-            }
-
-            .hero {
-                padding: 6rem 1.25rem 4rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            section { padding: 4rem 1.25rem; }
+            .hero { padding: 6rem 1.25rem 4rem; }
         }
 
         /* ===== ANIMATIONS ===== */
@@ -884,7 +740,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
     </style>
 </head>
 <body>
@@ -896,7 +751,9 @@
             </a>
             <div class="nav-links">
                 <a href="#services">שירותים</a>
+                <a href="/he/integrations">אינטגרציות</a>
                 <a href="#how-it-works">איך זה עובד</a>
+                <a href="#security">אבטחה</a>
                 <a href="#pricing">מחירים</a>
                 <a href="#contact" class="btn btn-primary">התחילו עכשיו</a>
                 <a href="../" class="lang-switch">🌐 English</a>
@@ -904,6 +761,7 @@
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-inner">
             <div>
@@ -914,7 +772,7 @@
                 <h1>צוות התפעול שלכם<br><span class="gradient-text">מונע בינה מלאכותית</span></h1>
                 <p>OpsAgent מחליף את הבק-אופיס שלכם בסוכני AI שבאמת עובדים. ניהול לידים, אאוטריצ׳ מכירות, גיוס, פיננסים ותוכן — הכל אוטומטי, הכל נמדד לפי תוצאות.</p>
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn btn-primary btn-lg">קבעו דמו</a>
+                    <a href="/intake" class="btn btn-primary btn-lg">קבעו דמו</a>
                     <a href="#services" class="btn btn-outline btn-lg">ראו מה אנחנו מייעלים</a>
                 </div>
                 <div class="hero-stats">
@@ -923,7 +781,7 @@
                         <div class="label">רווח גולמי</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="number">6</div>
+                        <div class="number">18</div>
                         <div class="label">מחלקות אוטומטיות</div>
                     </div>
                     <div class="hero-stat">
@@ -934,16 +792,12 @@
             </div>
 
             <div class="hero-visual">
-                <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;"><div style="color:#fff;font-weight:700;font-size:1rem;">תפעול חי</div><div style="display:flex;align-items:center;gap:6px;background:rgba(16,185,129,0.15);padding:4px 12px;border-radius:20px;"><span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;"></span><span style="color:#10B981;font-size:0.75rem;font-weight:600;">LIVE</span></div></div>
-                    <div style="display:flex;align-items:center;gap:1rem;padding:0.8rem;border-radius:12px;background:rgba(255,255,255,0.03);margin-bottom:0.5rem;"><span style="font-size:1.3rem;">📊</span><div style="flex:1;"><div style="color:#fff;font-weight:600;font-size:0.9rem;">ניהול לידים</div><div style="color:rgba(255,255,255,0.5);font-size:0.8rem;">5 לידים עובדו</div></div><span style="color:#10B981;font-weight:600;font-size:0.85rem;">✓ בוצע</span></div>
-                    <div style="display:flex;align-items:center;gap:1rem;padding:0.8rem;border-radius:12px;background:rgba(255,255,255,0.03);margin-bottom:0.5rem;"><span style="font-size:1.3rem;">💼</span><div style="flex:1;"><div style="color:#fff;font-weight:600;font-size:0.9rem;">פנייה למכירות</div><div style="color:rgba(255,255,255,0.5);font-size:0.8rem;">12 הודעות נשלחו</div></div><span style="color:#10B981;font-weight:600;font-size:0.85rem;">✓ בוצע</span></div>
-                    <div style="display:flex;align-items:center;gap:1rem;padding:0.8rem;border-radius:12px;background:rgba(255,255,255,0.03);"><span style="font-size:1.3rem;">📝</span><div style="flex:1;"><div style="color:#fff;font-weight:600;font-size:0.9rem;">פרסום תוכן</div><div style="color:rgba(255,255,255,0.5);font-size:0.8rem;">4 פוסטים תוזמנו</div></div><span style="color:#10B981;font-weight:600;font-size:0.85rem;">✓ בוצע</span></div>
-                </div>
+                <img src="/sc_overview.jpg" alt="לוח בקרת תפעול OpsAgent — לוח בקרה חי">
             </div>
         </div>
     </section>
 
+    <!-- PROBLEM -->
     <section class="problem" id="problem">
         <div class="section-inner">
             <div class="section-header">
@@ -952,17 +806,17 @@
                 <p>עסקי שירות מוציאים 40–60% מההכנסות על תפעול שלא מייצר הכנסה.</p>
             </div>
             <div class="problem-grid">
-                <div class="problem-card">
+                <div class="problem-card fade-in">
                     <div class="icon">💸</div>
                     <h3>כוח אדם יקר</h3>
                     <p>גיוס מנהלי תפעול, מנהלי חשבונות, מגייסים ואנשי שיווק עולה $250K+ בשנה. רוב המשימות חוזרות ומבוססות כללים.</p>
                 </div>
-                <div class="problem-card">
+                <div class="problem-card fade-in">
                     <div class="icon">🐌</div>
                     <h3>איטי ומועד לטעויות</h3>
                     <p>מעקבי לידים ידניים נופלים בין הכיסאות. חשבוניות לא מתאימות. סינון מועמדים לוקח ימים במקום דקות.</p>
                 </div>
-                <div class="problem-card">
+                <div class="problem-card fade-in">
                     <div class="icon">📉</div>
                     <h3>בלאגן כלי SaaS</h3>
                     <p>אתם משלמים על 10+ כלי SaaS שלא מדברים אחד עם השני. אסון ה-SaaS של $285B הוכיח שהמודל הזה שבור.</p>
@@ -971,16 +825,17 @@
         </div>
     </section>
 
-    <section id="services" class="services">
+    <!-- SERVICES -->
+    <section id="services">
         <div class="section-inner">
             <div class="section-header">
                 <div class="section-label">מה אנחנו מייעלים</div>
-                <h2>שש מחלקות. שכבת תפעול AI אחת.</h2>
+                <h2>18 מחלקות. שכבת תפעול AI אחת.</h2>
                 <p>כל סוכן רץ בפרודקשן — לא דמו, לא פרוטוטייפ. נבדק בקרב על עסק אמיתי.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(108,58,237,0.1);">📊</div>
                     <h3>ניהול לידים</h3>
                     <p>AI סורק את ה-Pipeline שלכם יומיומית, מתעדף לידים, מפעיל מעקבים ומספק תדרוך בוקר.</p>
                     <ul class="service-features">
@@ -990,8 +845,8 @@
                         <li>דוחות תדרוך בוקר</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(16,185,129,0.1);">💼</div>
                     <h3>אאוטריצ׳ מכירות</h3>
                     <p>אאוטריצ׳ לינקדאין מותאם אישית בקנה מידה. פילוח, שליחת הודעות, מעקב תגובות — הכל ידיים חופשיות.</p>
                     <ul class="service-features">
@@ -1001,30 +856,35 @@
                         <li>עדכוני CRM</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(59,130,246,0.1);">🎯</div>
                     <h3>גיוס</h3>
-                    <p>פרסום משרות במספר פלטפורמות, סינון מועמדים עם AI ודירוג מועמדים לפי ציון התאמה.</p>
+                    <p>מחזור גיוס מלא — מפרסום משרה ועד הגשת מועמד — מנוהל מקצה לקצה על ידי AI.</p>
                     <ul class="service-features">
                         <li>פרסום במולטי-פלטפורמה</li>
-                        <li>סינון מועמדים עם AI</li>
-                        <li>דירוג לפי ציון התאמה</li>
+                        <li>סריקת מיומנויות טכניות</li>
+                        <li>סינון קורות חיים ודירוג התאמה</li>
+                        <li>הכנת קו"ח ועיצוב להגשה</li>
+                        <li>ניהול Pipeline מועמדים</li>
+                        <li>תקשורת ועדכונים ללקוחות</li>
                         <li>תיאום ראיונות</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🧾</div>
-                    <h3>פיננסים וחשבוניות</h3>
-                    <p>הפקת חשבוניות, התאמת קבלות לעסקאות, התאמת חשבונות בנק — אוטומטית.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(239,68,68,0.1);">🧾</div>
+                    <h3>פיננסים, הזמנות ומלאי</h3>
+                    <p>מהצעת מחיר ועד חשבונית — הצעות, הזמנות, קבלות, חשבוניות ומלאי מנוהלים מקצה לקצה, אוטומטית.</p>
                     <ul class="service-features">
+                        <li>הצעות מחיר</li>
+                        <li>ניהול הזמנות</li>
                         <li>הפקת חשבוניות</li>
                         <li>התאמת קבלות</li>
+                        <li>מעקב מלאי</li>
                         <li>התאמת חשבון בנק</li>
-                        <li>דוחות חודשיים</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(245,158,11,0.1);">📝</div>
                     <h3>תוכן ורשתות חברתיות</h3>
                     <p>פוסטים יומיים בלינקדאין, אינסטגרם, פייסבוק ו-X. בהתאם למותג, בלוח זמנים, על טייס אוטומטי.</p>
                     <ul class="service-features">
@@ -1034,8 +894,8 @@
                         <li>מעקב אינטראקציות</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(168,85,247,0.1);">📋</div>
                     <h3>תפעול פנימי</h3>
                     <p>דוחות סטטוס, תקשורת פנימית, יצירת מסמכים — כל מה ששומר על החברה שלכם בתנועה.</p>
                     <ul class="service-features">
@@ -1045,29 +905,206 @@
                         <li>תיעוד תהליכים</li>
                     </ul>
                 </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(6,182,212,0.1);">🌐</div>
+                    <h3>בריאות אתרים</h3>
+                    <p>ניטור רציף של האתרים שלכם ואתרי הלקוחות — זמינות, ביצועים וקישורים שבורים מזוהים אוטומטית.</p>
+                    <ul class="service-features">
+                        <li>התראות זמינות ותקלות</li>
+                        <li>בדיקות ביצועים</li>
+                        <li>זיהוי קישורים שבורים</li>
+                        <li>התראות מיידיות</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(234,179,8,0.1);">📅</div>
+                    <h3>ניהול פרויקטים</h3>
+                    <p>מעקב אחרי אבני דרך, דדליינים ותוצרים בכל פרויקטי הלקוחות — עם עדכוני סטטוס אוטומטיים והתראות חסימות.</p>
+                    <ul class="service-features">
+                        <li>מעקב אבני דרך</li>
+                        <li>התראות דדליין</li>
+                        <li>סנכרון Monday / Jira / Trello</li>
+                        <li>דוחות התקדמות שבועיים</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(20,184,166,0.1);">🤝</div>
+                    <h3>ניהול לקוחות</h3>
+                    <p>נראות מלאה לכל קשר לקוח — היסטוריה, פריטים פתוחים, חידושים קרובים ואיתותי שביעות רצון, הכל במקום אחד.</p>
+                    <ul class="service-features">
+                        <li>תצוגת לקוח 360°</li>
+                        <li>התראות חידוש ו-Upsell</li>
+                        <li>סיכומי פגישות</li>
+                        <li>ציון בריאות קשר</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(251,146,60,0.1);">🖼️</div>
+                    <h3>ניהול נכסים דיגיטליים</h3>
+                    <p>ארגון, תיוג ואחזור נכסי מותג, קבצי עיצוב ומדיה — מתויקים אוטומטית לפי לקוח, קמפיין או פרויקט.</p>
+                    <ul class="service-features">
+                        <li>תיוג ותיוק אוטומטי</li>
+                        <li>סנכרון Google Drive / Dropbox</li>
+                        <li>מעקב גרסאות</li>
+                        <li>אחזור נכסים מהיר</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(236,72,153,0.1);">🔍</div>
+                    <h3>פרוספקטינג</h3>
+                    <p>מוצא לידים חדשים שמתאימים לפרופיל הלקוח האידיאלי שלכם — חוקר חברות, מעשיר נתוני קשר ומכין אותם לאאוטריצ׳.</p>
+                    <ul class="service-features">
+                        <li>חיפוש חברות לפי ICP</li>
+                        <li>העשרת נתוני קשר</li>
+                        <li>מחקר לינקדאין ואינטרנט</li>
+                        <li>בניית תור אאוטריצ׳</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(99,102,241,0.1);">📄</div>
+                    <h3>הצעות מחיר ותקציבים</h3>
+                    <p>מייצר הצעות מקצועיות, עוקב אחר תקציב מול בפועל לכל פרויקט, ומתריע על חריגת סקופ לפני שהיא הופכת לבעיה.</p>
+                    <ul class="service-features">
+                        <li>יצירת הצעות מחיר</li>
+                        <li>מעקב תקציב מול בפועל</li>
+                        <li>התראות חריגת סקופ</li>
+                        <li>תהליכי אישור</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(52,211,153,0.1);">👩‍💼</div>
+                    <h3>ניהול צוות ומעקב שעות</h3>
+                    <p>מנטר שעות ב-Toggl, עוקב אחר ניצולת צוות, מזהה פערי קיבולת ומייצר דוחות זמן מוכנים לחיוב אוטומטית.</p>
+                    <ul class="service-features">
+                        <li>אינטגרציית Toggl</li>
+                        <li>דשבורדי ניצולת</li>
+                        <li>התראות תכנון קיבולת</li>
+                        <li>דוחות מוכנים לחיוב</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(59,130,246,0.1);">📧</div>
+                    <h3>אוטומציית מייל ויומן</h3>
+                    <p>ממיין את תיבת הדואר, טויט תשובות, מתאם פגישות ושומר על היומן שלכם נקי — כדי שתתחילו כל יום מאורגנים.</p>
+                    <ul class="service-features">
+                        <li>מיון תיבת דואר חכם</li>
+                        <li>טיוטות תשובות עם AI</li>
+                        <li>תזמון יומן</li>
+                        <li>תדרוכי הכנה לפגישות</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(139,92,246,0.1);">🗂️</div>
+                    <h3>מאגר ידע ומסמכי לקוח</h3>
+                    <p>מאחסן ומארגן את כל הידע הארגוני, מסמכי לקוח וקוד לפי לקוח — חיפושי, מובנה ותמיד מעודכן.</p>
+                    <ul class="service-features">
+                        <li>אחסון מסמכים לפי לקוח</li>
+                        <li>ארגון קוד ומפרטים</li>
+                        <li>חיפוש ואחזור חכם</li>
+                        <li>עדכון אוטומטי ממיילים ופגישות</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(239,68,68,0.1);">🔍</div>
+                    <h3>סקירת קוד</h3>
+                    <p>סקירת קוד אוטומטית על כל PR — תופס באגים, אוכף סטנדרטים ומסמן בעיות לפני שהן מגיעות לפרודקשן.</p>
+                    <ul class="service-features">
+                        <li>ניתוח Pull Requests</li>
+                        <li>בדיקות איכות קוד</li>
+                        <li>אכיפת סטנדרטים</li>
+                        <li>סיכומי משוב למפתחים</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(220,38,38,0.1);">🔐</div>
+                    <h3>אבטחת קוד</h3>
+                    <p>סורק את בסיס הקוד שלכם לאיתור פגיעויות, סודות חשופים וסיכוני תלויות — באופן רציף ואוטומטי.</p>
+                    <ul class="service-features">
+                        <li>סריקת פגיעויות</li>
+                        <li>זיהוי סודות ואישורים</li>
+                        <li>התראות סיכוני תלויות</li>
+                        <li>הפקת דוחות אבטחה</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(251,191,36,0.1);">🖼️</div>
+                    <h3>בריאות נכסים דיגיטליים</h3>
+                    <p>מנטר את הנכסים הדיגיטליים שלכם בין פלטפורמות — מזהה קישורים שבורים, תוכן שפג תוקפו וקבצים חסרים לפני שלקוחות שמים לב.</p>
+                    <ul class="service-features">
+                        <li>ניטור נכסים חוצה-פלטפורמות</li>
+                        <li>זיהוי קישורים שבורים</li>
+                        <li>התראות תוכן שפג תוקפו</li>
+                        <li>דוחות מלאי נכסים</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(16,185,129,0.1);">⚙️</div>
+                    <h3>אוטומציות</h3>
+                    <p>אוטומציות תהליכי עבודה מותאמות שמחברות את הכלים שלכם ומבטלות משימות חוזרות — נבנות, מנוטרות ומתוחזקות על ידי AI.</p>
+                    <ul class="service-features">
+                        <li>אוטומציית תהליכים חוצי-כלים</li>
+                        <li>פעולות מבוססות טריגרים</li>
+                        <li>ניטור בריאות אוטומציות</li>
+                        <li>התראות שגיאות וריפוי עצמי</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(99,102,241,0.1);">🛡️</div>
+                    <h3>אבטחת נכסים דיגיטליים</h3>
+                    <p>מנטר הרשאות גישה, מזהה שינויים לא מורשים ומסמן פעילות חשודה על פני כל הנכסים הדיגיטליים ואחסון הקבצים.</p>
+                    <ul class="service-features">
+                        <li>ניטור הרשאות גישה</li>
+                        <li>זיהוי שינויים לא מורשים</li>
+                        <li>התראות פעילות חשודה</li>
+                        <li>דוחות אודיט אבטחה</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(34,197,94,0.1);">📊</div>
+                    <h3>דוחות ואנליטיקס</h3>
+                    <p>הופך נתונים גולמיים מכל הכלים שלכם לדוחות יומיים, שבועיים וחודשיים ברורים — מסופקים אוטומטית, ללא עבודה ידנית.</p>
+                    <ul class="service-features">
+                        <li>איסוף נתונים חוצה-כלים</li>
+                        <li>תדרוכים יומיים ושבועיים</li>
+                        <li>מעקב KPIs ומגמות</li>
+                        <li>תזמון דוחות מותאם</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- INTEGRATIONS BANNER -->
+    <section id="integrations" style="padding: 4rem 2rem; background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #1E1B4B 100%);">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(108,58,237,0.2); border: 1px solid rgba(108,58,237,0.3); border-radius: 100px; padding: 0.4rem 1rem; font-size: 0.85rem; color: #8B5CF6; margin-bottom: 1.5rem;">50+ אינטגרציות</div>
+            <h2 style="font-size: 2.2rem; font-weight: 800; color: white; margin-bottom: 1rem;">עובד עם הכלים הקיימים שלכם</h2>
+            <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; max-width: 640px; margin: 0 auto 2rem;">WhatsApp, iMessage, Slack, Monday.com, Trello, Zoho Cliq, Gmail, Google Calendar, Notion, LinkedIn, Toggl ועוד רבים — הכל מחובר בצורה מאובטחת.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; font-size: 2rem; opacity: 0.7;">🟢 🍎 🟣 🗂️ 🟦 💬 📩 📅 📓 🔗 ⏱️ 📁</div>
+            <a href="/he/integrations" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, #6C3AED, #8B5CF6); color: white; box-shadow: 0 4px 15px rgba(108, 58, 237, 0.4); transition: all 0.3s;">ראו את כל האינטגרציות ←</a>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
     <section id="how-it-works" class="how-it-works">
         <div class="section-inner">
             <div class="section-header">
-                <div class="section-label">איך זה עובד</div>
+                <div class="section-label" style="color: var(--primary-light);">איך זה עובד</div>
                 <h2>חי תוך ימים, לא חודשים</h2>
                 <p>אנחנו מתחברים לכלים הקיימים שלכם ופורסים סוכני AI שמתחילים לספק תוצאות מיידית.</p>
             </div>
             <div class="steps">
-                <div class="step">
+                <div class="step fade-in">
                     <div class="step-number">1</div>
                     <h3>שיחת גילוי</h3>
                     <p>אנחנו ממפים את התפעול שלכם ב-30 דקות. אילו מחלקות עולות לכם הכי הרבה? איפה משימות נופלות בין הכיסאות?</p>
                 </div>
-                <div class="step">
+                <div class="step fade-in">
                     <div class="step-number">2</div>
                     <h3>פריסת סוכנים</h3>
                     <p>אנחנו מתחברים למייל, יומן, CRM וכלי החשבונאות שלכם באמצעות OAuth מאובטח. סוכני AI עולים לאוויר תוך ימים.</p>
                 </div>
-                <div class="step">
+                <div class="step fade-in">
                     <div class="step-number">3</div>
                     <h3>תוצאות מסופקות</h3>
                     <p>לידים מנוהלים. חשבוניות מותאמות. תוכן מפורסם. אתם מקבלים תדרוך יומי של כל מה שצוות ה-AI שלכם השיג.</p>
@@ -1076,7 +1113,7 @@
         </div>
     </section>
 
-
+    <!-- PROOF -->
     <section id="proof">
         <div class="section-inner">
             <div class="section-header">
@@ -1089,11 +1126,11 @@
                     <h3>מקרה בוחן MSApps</h3>
                     <p>בנינו את OpsAgent כדי להפעיל את החברה שלנו. כל סוכן שאתם רואים כאן רץ בפרודקשן כבר חודשים, מטפל בלידים אמיתיים, חשבוניות אמיתיות, גיוס אמיתי ותוכן אמיתי במספר פלטפורמות.</p>
                     <p>התוצאה? ערימת תפעול מלאה שרצה עם AI — מוכחת, נבדקה ומוכנה לפריסה עבור העסק שלכם.</p>
-                    <a href="#contact" class="btn btn-primary">ראו את מקרה הבוחן המלא</a>
+                    <a href="/case-study" class="btn btn-primary">ראו את מקרה הבוחן המלא ←</a>
                 </div>
                 <div class="proof-metrics">
                     <div class="metric">
-                        <div class="value">6</div>
+                        <div class="value">18</div>
                         <div class="desc">מחלקות אוטומטיות</div>
                     </div>
                     <div class="metric">
@@ -1113,74 +1150,163 @@
         </div>
     </section>
 
-    <section id="pricing" class="pricing">
+    <!-- SCREENSHOTS -->
+    <section id="screenshots" style="background:#0F172A;padding:5rem 0;">
+        <div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+            <div style="text-align:center;margin-bottom:3rem;">
+                <div style="display:inline-block;background:rgba(108,58,237,0.15);color:#8B5CF6;padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;margin-bottom:1rem;">פלטפורמה חיה</div>
+                <h2 style="font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:1rem;">ראו את OpsAgent בפעולה</h2>
+                <p style="color:rgba(255,255,255,0.6);font-size:1.1rem;max-width:560px;margin:0 auto;">נראות בזמן אמת לכל סוכן, כל הרצה, כל מדד — הכל בפלטפורמה אחת.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+                <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+                    <div style="background:rgba(108,58,237,0.2);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="width:10px;height:10px;border-radius:50%;background:#10B981;display:inline-block;"></span>
+                        <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">סקירת תפעול</span>
+                    </div>
+                    <img src="/sc_overview.jpg" alt="סקירת תפעול" style="width:100%;display:block;" loading="lazy">
+                </div>
+                <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+                    <div style="background:rgba(108,58,237,0.2);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="width:10px;height:10px;border-radius:50%;background:#6C3AED;display:inline-block;"></span>
+                        <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">היסטוריית הרצות</span>
+                    </div>
+                    <img src="/sc_history.jpg" alt="היסטוריית הרצות" style="width:100%;display:block;" loading="lazy">
+                </div>
+                <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+                    <div style="background:rgba(108,58,237,0.2);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="width:10px;height:10px;border-radius:50%;background:#F59E0B;display:inline-block;"></span>
+                        <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">מדדים ו-KPIs</span>
+                    </div>
+                    <img src="/sc_metrics.jpg" alt="מדדים ו-KPIs" style="width:100%;display:block;" loading="lazy">
+                </div>
+                <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+                    <div style="background:rgba(108,58,237,0.2);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="width:10px;height:10px;border-radius:50%;background:#3B82F6;display:inline-block;"></span>
+                        <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">הגדרות ותזמונים</span>
+                    </div>
+                    <img src="/sc_settings.jpg" alt="הגדרות ותזמונים" style="width:100%;display:block;" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section id="security" style="background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #0F172A 100%); padding: 5rem 2rem;">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label" style="color: var(--primary-light);">אבטחה קודם</div>
+                <h2 style="color: var(--white);">הנתונים שלכם נשארים שלכם. תמיד.</h2>
+                <p style="color: rgba(255,255,255,0.6);">בעולם שבו אבטחת מידע היא סיכון עסקי מספר 1, בנינו את OpsAgent על עיקרון אחד שלא ניתן לפשרה: הנתונים שלכם לעולם לא עוזבים את הסביבה שלכם.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
+                    <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">ארכיטקטורת Zero Trust</h4>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">כל בקשת גישה מאומתת. ללא אמון מובלע — אף פעם. הרשאות מוגדרות, מוגבלות וניתנות לביקורת.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🗄️</div>
+                    <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">ללא אחסון נתונים עסקיים</h4>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">אנחנו לא מאחסנים את הנתונים העסקיים שלכם בשרתים חיצוניים. OpsAgent מעבד ופועל — הוא לא שומר.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🔑</div>
+                    <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">גישה מוגדרת בלבד</h4>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">אינטגרציות מתחברות רק למה שנדרש. ללא הרשאות רחבות, ללא גישה נסתרת. אתם שולטים במה ש-OpsAgent יכול לראות.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📋</div>
+                    <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">מסלול ביקורת מלא</h4>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">כל פעולה אוטומטית מתועדת. דעו בדיוק מה רץ, מתי ולמה — תמיד.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
         <div class="section-inner">
             <div class="section-header">
                 <div class="section-label">מחירים</div>
                 <h2>שלמו על תוצאות, לא על מושבים</h2>
                 <p>בלי תשלום למשתמש. בלי מנויי כלים. רק תוצאות שמסופקות.</p>
             </div>
+            <div style="text-align:center; margin-bottom: 2rem; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(108,58,237,0.12), rgba(16,185,129,0.08)); border-radius: 12px; border: 1px solid rgba(108,58,237,0.2);">
+                <span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">✦ &nbsp; דמי הקמה חד-פעמיים: <strong style="color: var(--primary);">$1,500</strong> &nbsp;·&nbsp; כולל אונבורדינג, אינטגרציה ו-30 יום ליווי צמוד &nbsp; ✦</span>
+            </div>
+            <div style="text-align:center; margin-bottom: 1.5rem; padding: 0.85rem 1.5rem; background: rgba(108,58,237,0.06); border-radius: 10px; border: 1px solid rgba(108,58,237,0.15);">
+                <span style="font-size: 0.82rem; color: var(--gray-500);">הרצות תהליך מעבר למגבלת התוכנית מחויבות ב-<strong style="color: var(--gray-700);">$0.10 להרצה</strong>.</span>
+            </div>
             <div class="pricing-grid">
-                <div class="pricing-card">
+                <div class="pricing-card fade-in">
                     <h3>סטארטר</h3>
-                    <div class="price">$1,500<span>/חודש</span></div>
-                    <div class="target">עד 20 עובדים</div>
+                    <div class="price">$2,200<span>/חודש</span></div>
+                    <div class="target">עד 5 עובדים</div>
                     <ul class="pricing-features">
                         <li>2 מחלקות סוכני AI</li>
-                        <li>תהליכי עבודה אוטומטיים יומיים</li>
+                        <li>עד 20 תהליכי עבודה אוטומטיים/יום</li>
+                        <li>עד 500 הרצות/חודש</li>
                         <li>דוחות תדרוך בוקר</li>
                         <li>תמיכה במייל וצ׳אט</li>
                         <li>שיחת סקירה חודשית</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline" style="width: 100%;">התחילו עכשיו</a>
+                    <a href="/intake" class="btn btn-outline" style="color: var(--gray-900); border-color: var(--gray-300); width: 100%; justify-content: center;">התחילו עכשיו</a>
                 </div>
-                <div class="pricing-card featured">
+                <div class="pricing-card featured fade-in">
                     <div class="pricing-badge">הפופולרי ביותר</div>
                     <h3>צמיחה</h3>
-                    <div class="price">$3,500<span>/חודש</span></div>
-                    <div class="target">20–50 עובדים</div>
+                    <div class="price">$4,400<span>/חודש</span></div>
+                    <div class="target">6–20 עובדים</div>
                     <ul class="pricing-features">
-                        <li>כל 6 מחלקות סוכני AI</li>
+                        <li>כל 18 מחלקות סוכני AI</li>
+                        <li>עד 50 תהליכי עבודה אוטומטיים/יום</li>
+                        <li>עד 2,000 הרצות/חודש</li>
                         <li>אוטומציות תהליכי עבודה מותאמות</li>
                         <li>תמיכה בעדיפות</li>
                         <li>מנהל הצלחה ייעודי</li>
                         <li>שיחות אסטרטגיה שבועיות</li>
                         <li>אינטגרציות מותאמות</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary" style="width: 100%;">קבעו דמו</a>
+                    <a href="/intake" class="btn btn-primary" style="width: 100%; justify-content: center;">קבעו דמו</a>
                 </div>
-                <div class="pricing-card">
+                <div class="pricing-card fade-in">
                     <h3>אנטרפרייז</h3>
                     <div class="price">מותאם אישית</div>
-                    <div class="target">50+ עובדים</div>
+                    <div class="target">20+ עובדים</div>
                     <ul class="pricing-features">
                         <li>הכל בתוכנית צמיחה</li>
+                        <li>הרצות ללא הגבלה</li>
                         <li>מחלקות ללא הגבלה</li>
                         <li>אפשרות פריסה מקומית</li>
                         <li>פיתוח סוכני AI מותאם</li>
                         <li>ערבות SLA</li>
                         <li>תמיכה הנדסית ייעודית</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline" style="width: 100%;">צרו קשר</a>
+                    <a href="/intake" class="btn btn-outline" style="color: var(--gray-900); border-color: var(--gray-300); width: 100%; justify-content: center;">צרו קשר</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta" id="contact">
-        <h2>מוכנים להחליף את הבק-אופיס שלכם<br>ב-AI שבאמת עובד?</h2>
-        <p>הצטרפו לבטא הפרטית שלנו. מוכוון תוצאות. בטלו בכל עת.</p>
-        <div class="cta-buttons">
-            <a href="mailto:hello@opsagent.ai?subject=OpsAgent Pilot Interest" class="btn btn-accent btn-lg">קבעו דמו</a>
-            <a href="mailto:hello@opsagent.ai?subject=OpsAgent Demo Request" class="btn btn-outline btn-lg">קבעו דמו</a>
+        <div class="section-inner">
+            <h2>מוכנים להחליף את הבק-אופיס שלכם<br>ב-AI שבאמת עובד?</h2>
+            <p>הצטרפו לבטא הפרטית שלנו. מוכוון תוצאות. בטלו בכל עת.</p>
+            <div class="cta-buttons">
+                <a href="/intake" class="btn btn-accent btn-lg">קבעו דמו</a>
+                <a href="/intake" class="btn btn-outline btn-lg">התחילו מיפוי</a>
+            </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
-            <p class="footer-text">© 2026 OpsAgent. כל הזכויות שמורות.</p>
+            <p class="footer-text">&copy; 2026 OpsAgent. כל הזכויות שמורות.</p>
             <div class="footer-links">
-                <a href="mailto:hello@opsagent.ai">צרו קשר</a>
+                <a href="/intake">צרו קשר</a>
                 <a href="#">פרטיות</a>
                 <a href="#">תנאי שימוש</a>
                 <a href="../" class="lang-switch">🌐 English</a>
@@ -1189,15 +1315,13 @@
     </footer>
 
     <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
+        // Fade in on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1206,10 +1330,17 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('section > div, .problem-card, .service-card, .step, .pricing-card').forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
     </script>
+
 </body>
 </html>
