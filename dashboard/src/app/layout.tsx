@@ -4,6 +4,7 @@ import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
 import { ToastContainer } from "@/components/toast";
 import { AppShell } from "@/components/app-shell";
+import Script from 'next/script'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,7 +34,14 @@ export default function RootLayout({
           </main>
           <ToastContainer />
         </AppShell>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-SW9F3W4ER7" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SW9F3W4ER7');
+        `}</Script>
       </body>
-    </html>
+      </html>
   );
 }
