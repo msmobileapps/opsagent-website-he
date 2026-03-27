@@ -2,11 +2,51 @@
 
 ## What is this project?
 
-OpsAgent is an AI-powered operations automation platform that runs autonomous Claude agents on scheduled cron jobs for multiple clients. Each agent performs a specific business operation (sales pipeline review, LinkedIn outreach, social media posts, receipt matching, invoicing, recruiting) and produces structured markdown output.
+OpsAgent is an AI-powered operations automation platform. Each client gets a **virtual Mac running Claude Desktop** with their specific MCP integrations (Google Calendar, iCount, Notion, etc.). A central **dashboard** controls and monitors all client VMs from one place.
 
-The system is built for **MSApps** (tech/AI consulting company run by Michal Shatz) but designed as a multi-client platform.
+Built by **MSApps** (tech/AI consulting company run by Michal Shatz).
 
-## Architecture Overview
+## Current Stage (2026-03-27)
+
+**POC phase** — building the multi-client virtual Mac + dashboard architecture. The old single-server model (Claude Agent SDK running agents directly) works and is kept for reference below. The new architecture replaces it.
+
+## Target Architecture (NEW)
+
+```
+┌─────────────────────────────────────────────────┐
+│                  DASHBOARD                       │
+│        (Next.js — controls all clients)          │
+│                                                  │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐      │
+│  │ Client A │  │ Client B │  │ Client C │  ... │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘      │
+└───────┼──────────────┼──────────────┼────────────┘
+        │              │              │
+   Cloudflare     Cloudflare     Cloudflare
+    Tunnel          Tunnel         Tunnel
+        │              │              │
+┌───────┴───┐  ┌───────┴───┐  ┌───────┴───┐
+│ Virtual   │  │ Virtual   │  │ Virtual   │
+│ Mac A     │  │ Mac B     │  │ Mac C     │
+│           │  │           │  │           │
+│ Claude    │  │ Claude    │  │ Claude    │
+│ Desktop + │  │ Desktop + │  │ Desktop + │
+│ MCP       │  │ MCP       │  │ MCP       │
+│ servers   │  │ servers   │  │ servers   │
+│ (client's │  │ (client's │  │ (client's │
+│ integra-  │  │ integra-  │  │ integra-  │
+│ tions)    │  │ tions)    │  │ tions)    │
+└───────────┘  └───────────┘  └───────────┘
+```
+
+**Key idea:** Each VM is a fully autonomous ops environment for one client. Claude Desktop has all their tools (calendar, accounting, email, CRM). The dashboard just orchestrates — trigger agents, view results, manage schedules, approve actions.
+
+**Client config now includes:**
+- `tunnel_url` — Cloudflare Tunnel URL to the VM's API
+- `vm_id` — identifier for the virtual Mac instance
+- All existing fields (agents, schedules, context, etc.)
+
+## Legacy Architecture (reference — still works)
 
 ```
 index.js                    ← Entry point: starts the scheduler
@@ -134,9 +174,17 @@ The primary (and currently only) client. Config in `clients/msapps.json`:
 2. Add the agent to each relevant client config in `clients/<client>.json` under the `agents` key
 3. Set `enabled: true`, `schedule` (cron), and `context` (key-value pairs the agent needs)
 
-## Adding a New Client
+## Adding a New Client (Legacy)
 
 1. Copy `clients/template.json` → `clients/<client-id>.json`
 2. Fill in `id`, `name`, `contact_email`, `timezone`, `industry`, `company_size`
 3. Enable desired agents with schedules and context
 4. The scheduler will auto-discover it on next restart
+
+## Adding a New Client (New Architecture)
+
+1. Provision a virtual Mac VM
+2. Install Claude Desktop + configure MCP servers for client's integrations
+3. Set up Cloudflare Tunnel exposing the API
+4. Add client to dashboard registry with `tunnel_url` and `vm_id`
+5. Configure agents and schedules via dashboard UI
