@@ -1,6 +1,7 @@
 'use client';
 import { DocProvider, useDocViewer } from './doc-context';
 import { DocumentViewer } from './document-viewer';
+import { ClientProvider } from '@/lib/client-context';
 
 function GlobalDocViewer() {
   const { currentDoc, closeDoc } = useDocViewer();
@@ -10,9 +11,11 @@ function GlobalDocViewer() {
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
-    <DocProvider>
-      {children}
-      <GlobalDocViewer />
-    </DocProvider>
+    <ClientProvider>
+      <DocProvider>
+        {children}
+        <GlobalDocViewer />
+      </DocProvider>
+    </ClientProvider>
   );
 }

@@ -19,6 +19,7 @@ import {
   Approval,
 } from './api';
 import { ExecutionLog, OutputItem } from './types';
+import { useClient } from './client-context';
 
 // Agent metadata not available from the API — enriches raw data
 const agentMeta: Record<string, { department: string; description: string; icon: string }> = {
@@ -104,6 +105,7 @@ export interface UseApiResult {
   loading: boolean;
   agents: Agent[];
   clientName: string;
+  clientId: string;
   refresh: () => Promise<void>;
   runAgent: (agentId: string, onLog?: (msg: string) => void) => Promise<string | null>;
   stopAgent: (agentId: string) => Promise<boolean>;
@@ -118,18 +120,20 @@ export interface UseApiResult {
 }
 
 export function useApi(): UseApiResult {
+  const { selectedClientId } = useClient();
   const [connected, setConnected] = useState(false);
   const [loading, setLoading] = useState(true);
   const [agents, setAgents] = useState<Agent[]>([]);
   const [clientName, setClientName] = useState('');
 
   const refresh = useCallback(async () => {
+    if (!selectedClientId) return;
     try {
       const [status, running] = await Promise.all([getStatus(), getRunningAgents()]);
       const runningNames = running.map(r => r.agentName);
 
-      if (status.clients.length > 0) {
-        const client = status.clients[0]; // POC: first client
+      const client = status.clients.find(c => c.id === selectedClientId);
+      if (client) {
         setClientName(client.name);
         setAgents(client.agents.map(a => mapAgent(a, runningNames)));
       }
@@ -139,20 +143,19 @@ export function useApi(): UseApiResult {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [selectedClientId]);
 
   useEffect(() => {
     refresh();
-    const interval = setInterval(refresh, 15000); // poll every 15s
+    const interval = setInterval(refresh, 15000);
     return () => clearInterval(interval);
   }, [refresh]);
 
   const runAgentFn = useCallback(async (agentId: string, onLog?: (msg: string) => void): Promise<string | null> => {
-    // Update local state to "running"
     setAgents(prev => prev.map(a => a.id === agentId ? { ...a, status: 'running' as AgentStatus } : a));
 
     return new Promise((resolve) => {
-      const es = runAgentStream('msapps', agentId);
+      const es = runAgentStream(selectedClientId, agentId);
       let output: string | null = null;
 
       es.addEventListener('log', (e: MessageEvent) => {
@@ -178,55 +181,56 @@ export function useApi(): UseApiResult {
         resolve(null);
       });
     });
-  }, [refresh]);
+  }, [selectedClientId, refresh]);
 
   const stopAgentFn = useCallback(async (agentId: string): Promise<boolean> => {
-    const stopped = await apiStopAgent('msapps', agentId);
+    const stopped = await apiStopAgent(selectedClientId, agentId);
     if (stopped) await refresh();
     return stopped;
-  }, [refresh]);
+  }, [selectedClientId, refresh]);
 
   const updateScheduleFn = useCallback(async (agentId: string, schedule?: string, enabled?: boolean) => {
-    await apiUpdateSchedule('msapps', agentId, schedule, enabled);
+    await apiUpdateSchedule(selectedClientId, agentId, schedule, enabled);
     await refresh();
-  }, [refresh]);
+  }, [selectedClientId, refresh]);
 
   const getAgentLogsFn = useCallback(async (agentId: string): Promise<string[]> => {
-    return getLogDates('msapps', agentId);
-  }, []);
+    return getLogDates(selectedClientId, agentId);
+  }, [selectedClientId]);
 
   const getAgentLogFn = useCallback(async (agentId: string, date: string): Promise<string> => {
-    return getLog('msapps', agentId, date);
-  }, []);
+    return getLog(selectedClientId, agentId, date);
+  }, [selectedClientId]);
 
   const getParsedAgentLogFn = useCallback(async (agentId: string, date: string): Promise<ExecutionLog> => {
-    return getParsedLog('msapps', agentId, date);
-  }, []);
+    return getParsedLog(selectedClientId, agentId, date);
+  }, [selectedClientId]);
 
   const getExecutionHistoryFn = useCallback(async (): Promise<ExecutionLog[]> => {
-    const data = await getHistory('msapps');
+    const data = await getHistory(selectedClientId);
     return data.logs;
-  }, []);
+  }, [selectedClientId]);
 
   const getAgentDocumentsFn = useCallback(async () => {
-    const data = await getDocuments('msapps');
+    const data = await getDocuments(selectedClientId);
     return data.documents;
-  }, []);
+  }, [selectedClientId]);
 
   const getApprovalsListFn = useCallback(async (status?: string): Promise<Approval[]> => {
-    const data = await getApprovals('msapps', status);
+    const data = await getApprovals(selectedClientId, status);
     return data.approvals;
-  }, []);
+  }, [selectedClientId]);
 
   const resolveApprovalFn = useCallback(async (approvalId: string, decision: 'approve' | 'deny'): Promise<Approval> => {
-    return apiResolveApproval('msapps', approvalId, decision);
-  }, []);
+    return apiResolveApproval(selectedClientId, approvalId, decision);
+  }, [selectedClientId]);
 
   return {
     connected,
     loading,
     agents,
     clientName,
+    clientId: selectedClientId,
     refresh,
     runAgent: runAgentFn,
     stopAgent: stopAgentFn,

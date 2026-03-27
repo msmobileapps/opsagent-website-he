@@ -15,7 +15,10 @@ import {
   X,
   FileText,
   ShieldCheck,
+  ChevronDown,
+  Circle,
 } from 'lucide-react';
+import { useClient } from '@/lib/client-context';
 
 const nav = [
   { href: '/', label: 'Overview', icon: LayoutDashboard },
@@ -30,6 +33,8 @@ const nav = [
 export function Sidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [clientDropdownOpen, setClientDropdownOpen] = useState(false);
+  const { clients, selectedClient, setSelectedClientId } = useClient();
 
   return (
     <>
@@ -98,12 +103,80 @@ export function Sidebar() {
           })}
         </nav>
 
-        {/* Client badge */}
+        {/* Client Switcher */}
         <div className="p-4 border-t border-surface-border">
-          <div className="bg-surface-raised rounded-lg p-3">
-            <p className="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Client</p>
-            <p className="text-sm font-semibold text-white">MSApps</p>
-            <p className="text-xs text-gray-500">10 agents active</p>
+          <div className="relative">
+            <button
+              onClick={() => setClientDropdownOpen(!clientDropdownOpen)}
+              className="w-full bg-surface-raised rounded-lg p-3 text-left hover:bg-surface-raised/80 transition-colors"
+            >
+              <p className="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Client</p>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-white">
+                    {selectedClient?.name || 'Select client'}
+                  </p>
+                  <div className="flex items-center gap-1.5 mt-0.5">
+                    <Circle
+                      className={clsx(
+                        'w-2 h-2 fill-current',
+                        selectedClient?.connected ? 'text-emerald-400' : 'text-gray-500'
+                      )}
+                    />
+                    <p className="text-xs text-gray-500">
+                      {selectedClient
+                        ? `${selectedClient.enabledAgents} agents active`
+                        : 'No client selected'}
+                    </p>
+                  </div>
+                </div>
+                {clients.length > 1 && (
+                  <ChevronDown
+                    className={clsx(
+                      'w-4 h-4 text-gray-500 transition-transform',
+                      clientDropdownOpen && 'rotate-180'
+                    )}
+                  />
+                )}
+              </div>
+            </button>
+
+            {/* Dropdown */}
+            {clientDropdownOpen && clients.length > 1 && (
+              <div className="absolute bottom-full left-0 right-0 mb-1 bg-surface border border-surface-border rounded-lg shadow-xl overflow-hidden z-50">
+                {clients.map(client => (
+                  <button
+                    key={client.id}
+                    onClick={() => {
+                      setSelectedClientId(client.id);
+                      setClientDropdownOpen(false);
+                    }}
+                    className={clsx(
+                      'w-full px-3 py-2.5 text-left flex items-center gap-2 hover:bg-surface-raised transition-colors',
+                      client.id === selectedClient?.id && 'bg-brand-500/10'
+                    )}
+                  >
+                    <Circle
+                      className={clsx(
+                        'w-2 h-2 fill-current shrink-0',
+                        client.connected ? 'text-emerald-400' : 'text-gray-500'
+                      )}
+                    />
+                    <div className="min-w-0">
+                      <p className={clsx(
+                        'text-sm font-medium truncate',
+                        client.id === selectedClient?.id ? 'text-brand-400' : 'text-white'
+                      )}>
+                        {client.name}
+                      </p>
+                      <p className="text-[10px] text-gray-500 truncate">
+                        {client.industry} — {client.enabledAgents}/{client.totalAgents} agents
+                      </p>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </aside>
