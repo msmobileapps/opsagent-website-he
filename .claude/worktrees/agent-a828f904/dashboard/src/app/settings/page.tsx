@@ -26,15 +26,15 @@ function Toggle({ enabled, onToggle }: { enabled: boolean; onToggle: () => void 
 }
 
 const billingItems = [
-  { label: 'Agent runs this month', value: '847', limit: '/ Unlimited', icon: Zap },
-  { label: 'Documents generated', value: '156', limit: '/ Unlimited', icon: Receipt },
-  { label: 'Active agents', value: '17', limit: '/ 25 max', icon: TrendingUp },
+  { label: 'Agent runs this month', value: '247', limit: '/ Unlimited', icon: Zap },
+  { label: 'Documents generated', value: '34', limit: '/ Unlimited', icon: Receipt },
+  { label: 'Active agents', value: '10', limit: '/ 15 max', icon: TrendingUp },
 ];
 
 const invoiceHistory = [
-  { date: 'Mar 1, 2026', amount: '$4,500', status: 'Paid', plan: 'Growth' },
-  { date: 'Feb 1, 2026', amount: '$4,500', status: 'Paid', plan: 'Growth' },
-  { date: 'Jan 1, 2026', amount: '$2,500', status: 'Paid', plan: 'Pro' },
+  { date: 'Mar 1, 2026', amount: '₪3,500', status: 'Paid', plan: 'Growth' },
+  { date: 'Feb 1, 2026', amount: '₪3,500', status: 'Paid', plan: 'Growth' },
+  { date: 'Jan 1, 2026', amount: '₪1,500', status: 'Paid', plan: 'Starter' },
 ];
 
 export default function SettingsPage() {
@@ -128,7 +128,7 @@ export default function SettingsPage() {
                 <label className="text-xs text-gray-500 uppercase tracking-wider">Email</label>
                 <input
                   type="email"
-                  defaultValue="jake@acmehomeimprovement.com"
+                  defaultValue="michal@msapps.co.il"
                   className="mt-1 w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-500"
                 />
               </div>
@@ -136,7 +136,7 @@ export default function SettingsPage() {
                 <label className="text-xs text-gray-500 uppercase tracking-wider">Timezone</label>
                 <input
                   type="text"
-                  defaultValue="America/Chicago"
+                  defaultValue="Asia/Jerusalem"
                   className="mt-1 w-full bg-surface border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-500"
                 />
               </div>
@@ -160,7 +160,7 @@ export default function SettingsPage() {
           </div>
 
           <div className="flex items-baseline gap-1 mb-4">
-            <span className="text-3xl font-bold text-white">$4,500</span>
+            <span className="text-3xl font-bold text-white">₪3,500</span>
             <span className="text-sm text-gray-500">/ month</span>
           </div>
 

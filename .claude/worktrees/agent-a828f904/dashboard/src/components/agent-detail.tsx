@@ -24,21 +24,12 @@ import {
   CheckCircle2,
   AlertCircle,
   XCircle,
-  Search,
-  Package,
-  TrendingUp,
-  Wallet,
-  Activity,
-  RefreshCw,
-  CreditCard,
 } from 'lucide-react';
 
 const icons: Record<string, React.ComponentType<{ className?: string }>> = {
   target: Target, send: Send, users: Users, receipt: Receipt,
   'file-check': FileCheck, megaphone: Megaphone, 'file-text': FileText,
   'clipboard-list': ClipboardList, mail: Mail, calendar: Calendar,
-  search: Search, package: Package, 'trending-up': TrendingUp, wallet: Wallet,
-  activity: Activity, 'refresh-cw': RefreshCw, 'credit-card': CreditCard,
 };
 
 const statusConfig = {

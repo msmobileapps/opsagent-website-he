@@ -1,0 +1,12 @@
+*.log
+.DS_Store
+.env
+.next/
+credentials.json
+dashboard/.claude/
+dashboard/.next/
+dashboard/node_modules/
+gcal-token.json
+logs/
+mcp-servers.json
+node_modules/

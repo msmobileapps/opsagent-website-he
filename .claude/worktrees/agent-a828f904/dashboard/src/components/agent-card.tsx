@@ -17,13 +17,6 @@ import {
   Play,
   Square,
   Clock,
-  Search,
-  Package,
-  TrendingUp,
-  Wallet,
-  Activity,
-  RefreshCw,
-  CreditCard,
 } from 'lucide-react';
 
 const icons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -37,13 +30,6 @@ const icons: Record<string, React.ComponentType<{ className?: string }>> = {
   'clipboard-list': ClipboardList,
   mail: Mail,
   calendar: Calendar,
-  search: Search,
-  package: Package,
-  'trending-up': TrendingUp,
-  wallet: Wallet,
-  activity: Activity,
-  'refresh-cw': RefreshCw,
-  'credit-card': CreditCard,
 };
 
 function timeAgo(dateStr: string | null): string {

@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "scheduler",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["index.js"],
+      "port": null
+    },
+    {
+      "name": "dashboard",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["src/dashboard.js"],
+      "port": 4242
+    },
+    {
+      "name": "cli",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["src/cli.js"],
+      "port": null
+    },
+    {
+      "name": "poc-dashboard",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--prefix", "dashboard", "next", "dev", "-p", "3100"],
+      "port": 3100
+    },
+    {
+      "name": "landing-page",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "8080", "."],
+      "port": 8080
+    }
+  ]
+}

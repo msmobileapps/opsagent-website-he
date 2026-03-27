@@ -1,398 +1,332 @@
 'use client';
 
-import { useState } from 'react';
-import { addToast } from './toast';
-import { clsx } from 'clsx';
-import {
-  X,
-  Maximize2,
-  Minimize2,
-  Pencil,
-  Save,
-  Download,
-  Send,
-} from 'lucide-react';
+import { X, Download, Share2 } from 'lucide-react';
 
 interface DocumentViewerProps {
-  doc: {
-    id: string;
-    name: string;
-    format: string;
-    agent: string;
-    department: string;
-    date: string;
-    status: string;
-    content?: string;
-  };
+  documentId: string;
   onClose: () => void;
 }
 
-const mockContents: Record<string, string> = {
-  '1': `# Proposal — NovaTech Solutions Enterprise Mobile App
+const documents: Record<string, { title: string; content: string }> = {
+  '1': {
+    title: 'Kitchen Remodel Proposal - River Oaks',
+    content: `# Kitchen Remodel Proposal
+## River Oaks Residence - Sarah Johnson
 
-**Prepared for:** Dan Cohen, NovaTech Solutions
-**Prepared by:** MSApps Ltd.
-**Date:** March 20, 2026
-**Validity:** 30 days
+**Date:** March 25, 2026  
+**Project Duration:** 12 weeks  
+**Estimated Value:** $45,200
 
----
+### Scope of Work
 
-## Executive Summary
+This comprehensive kitchen remodel includes:
+- Complete cabinetry replacement with custom hardwood frames
+- Granite countertops (2500 sq ft)
+- Stainless steel appliance package (range, refrigerator, dishwasher)
+- New flooring (porcelain tile, 800 sq ft)
+- Updated electrical and plumbing
+- New lighting fixtures and recessed lighting
+- Paint and finishing
 
-MSApps proposes the design, development, and deployment of an enterprise mobile application for NovaTech Solutions's field operations team. The application will streamline fleet management, service scheduling, and real-time reporting.
+### Timeline
+- Week 1-2: Demolition and structural prep
+- Week 3-6: Cabinetry and countertop installation
+- Week 7-10: Appliances, flooring, and electrical finishes
+- Week 11-12: Paint, final trim, and cleanup
 
-## Project Scope
+### Financial Terms
+- **Total Project Cost:** $45,200
+- **Deposit (Due at signing):** $15,000 (33%)
+- **Progress Payment (Week 6):** $15,000 (33%)
+- **Final Payment (Upon completion):** $15,200 (34%)
 
-### Phase 1 — Discovery & Design (Weeks 1-4)
-- Stakeholder interviews and requirements gathering
-- UX research and user journey mapping
-- UI design — 3 design concepts with 2 revision rounds
-- Technical architecture document
-- Prototype delivery
+### Warranty & Support
+- 2-year manufacturer warranty on all appliances
+- 5-year labor warranty on cabinetry and installation
+- 24/7 emergency support for first month post-completion
 
-### Phase 2 — Development (Weeks 5-12)
-- iOS and Android native development (React Native)
-- Backend API development (Node.js + PostgreSQL)
-- Fleet management module
-- Service scheduling module
-- Real-time reporting dashboard
-- Push notifications system
-- Offline-first data sync
+**Customer Approval:** Required  
+**Status:** Pending Customer Review`,
+  },
+  '2': {
+    title: 'Invoice #INV-2026-0847',
+    content: `# Invoice
 
-### Phase 3 — QA & Launch (Weeks 13-16)
-- Comprehensive QA testing
-- Performance optimization
-- App Store / Google Play submission
-- Production deployment
-- Knowledge transfer & documentation
-
-## Pricing
-
-| Item | Hours | Rate | Total |
-|------|-------|------|-------|
-| Discovery & Design | 120 | ₪250 | ₪30,000 |
-| Development | 280 | ₪250 | ₪70,000 |
-| QA & Launch | 60 | ₪250 | ₪15,000 |
-| Project Management | 80 | ₪200 | ₪16,000 |
-| **Total** | **540** | | **₪131,000** |
-
-**Proposed Fixed Price:** ₪52,000 (introductory rate)
-
-## Payment Terms
-
-- 30% upon contract signing — ₪15,600
-- 40% upon Phase 2 completion — ₪20,800
-- 30% upon final delivery — ₪15,600
-
-## Timeline
-
-16 weeks from contract signing to production deployment.
-
----
-
-*MSApps Ltd. | michal@msapps.co.il | +972-XXX-XXXXXXX*`,
-
-  '2': `# Invoice #2026-024
-
-**From:** MSApps Ltd.
-**To:** Atlas Industries
-**Date:** February 28, 2026
-**Due Date:** March 30, 2026
-**Status:** SENT
+**Invoice Number:** INV-2026-0847  
+**Date:** March 24, 2026  
+**Customer:** Robert Chen  
+**Project:** Bathroom Renovation - Westchester
 
 ---
 
 ## Billing Summary
 
-| Description | Hours | Rate | Amount |
-|-------------|-------|------|--------|
-| Senior Developer — App Module | 80 | ₪220 | ₪17,600 |
-| UI/UX Designer | 32 | ₪200 | ₪6,400 |
-| QA Engineer | 20 | ₪180 | ₪3,600 |
-| Project Management | 10 | ₪200 | ₪2,000 |
+| Item | Quantity | Rate | Amount |
+|------|----------|------|--------|
+| Labor - Demolition & Prep | 40 hrs | $85/hr | $3,400 |
+| Materials - Fixtures & Tile | - | - | $5,600 |
+| Plumbing Installation | 20 hrs | $95/hr | $1,900 |
+| Electrical Work | 15 hrs | $100/hr | $1,500 |
+| **Subtotal** | | | **$12,400** |
+| Tax (8.25%) | | | **$1,023** |
+| **Total Due** | | | **$13,423** |
 
 ---
 
-**Subtotal:** ₪29,600
-**Discount (5%):** -₪1,200
-**Total Due:** ₪28,400
+## Payment Terms
+- Due upon receipt
+- 1.5% discount for payment within 10 days
+- Standard net 30 days
 
-## Payment Details
+## Accepted Payment Methods
+- Bank transfer
+- Credit card (3% processing fee)
+- Check
 
-Bank: First National Bank
-Branch: 123
-Account: 456789
-Reference: INV-2026-024
+**Thank you for your business!**`,
+  },
+  '3': {
+    title: 'March 2026 Operations Report',
+    content: `# Operations Report
+## March 2026 Summary
 
----
+**Report Date:** March 20, 2026
 
-*Payment is due within 30 days of invoice date.*`,
+### Executive Summary
+March was a strong month for operations with 38 active projects across all service categories. We successfully completed 12 projects and booked 24 new qualified leads.
 
-  '5': `# Daily Pipeline Brief — March 21, 2026
+### Key Metrics
+- **Total Projects:** 38 active
+- **Completed:** 12 (completion rate: 31%)
+- **Revenue Generated:** $187,400
+- **New Leads:** 24
+- **Lead Conversion Rate:** 24%
+- **Customer Satisfaction:** 4.6/5.0
 
-**Generated by:** Lead Pipeline Agent
-**Time:** 08:12 AM
+### Department Performance
 
----
+#### Sales
+- New proposals issued: 18
+- Proposals accepted: 14
+- Average project value: $32,400
+- Conversion rate: 78%
 
-## Pipeline Summary
+#### Operations
+- On-time completion: 92%
+- Safety incidents: 0
+- Quality issues: 1 (resolved)
 
-- **Total Active Leads:** 47
-- **Hot Leads:** 4
-- **Warm Leads:** 18
-- **Cold Leads:** 25
+#### Finance
+- Invoices issued: 28
+- Collections rate: 94%
+- Outstanding receivables: $24,300
 
-## Hot Leads — Immediate Action Required
+#### Marketing
+- Lead generation campaigns: 4
+- Cost per lead: $145
+- Marketing spend: $3,480
 
-### 1. NovaTech Solutions ⚡
-- **Value:** ₪52,000
-- **Stage:** Proposal Sent (3 days ago)
-- **Contact:** Dan Cohen
-- **Action:** Follow up — no response to proposal
-- **Next Step:** Call or send follow-up email
+### Challenges & Resolutions
+1. **Weather delays** - 2 roofing projects delayed by rain
+2. **Material shortage** - Resolved by switching to alternative supplier
+3. **Staffing** - Successfully hired 2 new carpenters
 
-### 2. Meridian Digital ⚡
-- **Value:** ₪85,000
-- **Stage:** Pricing Requested
-- **Contact:** David Goldstein
-- **Action:** Generate and send proposal by Friday
-- **Next Step:** Prepare enterprise proposal
+### April Outlook
+- 42 projects scheduled
+- 28 new leads expected
+- Revenue projection: $215,000`,
+  },
+  '4': {
+    title: 'Project Schedule - Q2 2026',
+    content: `# Q2 2026 Project Schedule
 
-### 3. Gett
-- **Value:** TBD (discovery phase)
-- **Stage:** Initial Inquiry
-- **Contact:** Sarah Ben-David
-- **Action:** First meeting scheduled Thursday
-- **Next Step:** Prepare discovery presentation
+## Active Projects Timeline
 
-### 4. Wix Studios
-- **Value:** TBD (referred)
-- **Stage:** New Lead
-- **Contact:** Yonatan Raz (referred by Eli from CheckPoint)
-- **Action:** High potential — existing client referral
-- **Next Step:** Send intro email with case studies
+### April 2026
+- **Kitchen Remodel (River Oaks)** - Sarah Johnson - Apr 1-28
+- **Bathroom Renovation (Westlake)** - Michelle Davis - Apr 5-Jun 2
+- **Roofing Replacement (Heights)** - James Wilson - Apr 8-22
+- **Electrical Upgrade (Montrose)** - Thomas Anderson - Apr 12-25
+- **Windows Replacement (Downtown)** - Mark Johnson - Apr 15-May 15
 
-## Calendar Updates
+### May 2026
+- **HVAC System Upgrade (Spring Branch)** - Karen White - May 1-Jun 15
+- **Deck Construction (Pearland)** - David Thompson - May 5-Jun 2
+- **Exterior Painting (Museum District)** - [Pending] - May 8-22
+- **Flooring Installation (Energy Corridor)** - [Pending] - May 20-Jun 5
 
-- ✅ Follow-up meeting with NovaTech Solutions — added for Wednesday 14:00
-- ✅ Discovery call with Gett — confirmed for Thursday 10:00
+### June 2026
+- **Foundation Repair (Midtown)** - [Pending] - Jun 1-20
+- **Siding Replacement (Bellaire)** - [Pending] - Jun 5-30
 
-## Metrics This Week
+## Resource Allocation
+- **Carpenters:** 12 (80% allocated)
+- **Electricians:** 4 (90% allocated)
+- **Plumbers:** 3 (85% allocated)
+- **General Labor:** 8 (75% allocated)
 
-| Metric | Value | Trend |
-|--------|-------|-------|
-| New leads | 5 | ↑ 25% |
-| Proposals sent | 2 | ↑ 100% |
-| Meetings scheduled | 3 | → 0% |
-| Conversion rate | 24% | ↑ 3% |
+## Budget Status: On Track`,
+  },
+  '5': {
+    title: 'Competitor Price Comparison',
+    content: `# Market Analysis - Competitor Pricing Q1 2026
 
----
+## Kitchen Remodeling Comparison
+### $45,000 Project Scope (Similar to River Oaks)
 
-*Briefing sent to michal@msapps.co.il*`,
+| Company | Price | Labor | Timeline | Warranty |
+|---------|-------|-------|----------|----------|
+| **Acme Home Improvement** | $45,200 | 12 weeks | 2 years | Premium |
+| Competitor A | $48,900 | 14 weeks | 1 year | Standard |
+| Competitor B | $44,500 | 10 weeks | 1 year | Standard |
+| Competitor C | $52,300 | 16 weeks | 2 years | Standard |
 
-  '7': `# Monthly Billing Summary — February 2026
+**Acme Advantage:** Competitive pricing with premium warranty and reasonable timeline
 
-**Generated by:** Client Invoicing Agent
-**Date:** February 28, 2026
+## Bathroom Renovation Comparison
+### $28,000 Project Scope
 
----
+| Company | Price | Timeline | Warranty |
+|---------|-------|----------|----------|
+| **Acme Home Improvement** | $28,900 | 8 weeks | Premium |
+| Competitor A | $31,200 | 10 weeks | Standard |
+| Competitor B | $26,800 | 6 weeks | Limited |
+| Competitor C | $29,500 | 9 weeks | Standard |
 
-## Overview
+## Market Insights
+- Average market rate for kitchen remodels: $50,200
+- Acme pricing is **10% below market average**
+- Customer satisfaction scores: Acme (4.6/5) vs Competitors (3.8-4.2/5)
+- Warranty offerings: Acme leads with premium 2-year coverage`,
+  },
+  '6': {
+    title: 'Monthly Financial Summary',
+    content: `# Financial Summary - February 2026
 
-| | Count | Amount |
-|--|-------|--------|
-| Invoices Generated | 12 | ₪148,200 |
-| Invoices Sent | 12 | ₪148,200 |
-| Payments Received | 9 | ₪112,800 |
-| Outstanding | 3 | ₪35,400 |
+## Income Statement
+- **Total Revenue:** $182,500
+- **COGS:** $94,200 (51.6%)
+- **Gross Profit:** $88,300 (48.4%)
 
-## Breakdown by Client
+## Operating Expenses
+- **Salaries & Benefits:** $32,400
+- **Equipment & Tools:** $4,800
+- **Insurance:** $3,200
+- **Marketing:** $3,480
+- **Utilities & Office:** $1,850
+- **Vehicle & Fuel:** $2,100
 
-| Client | Hours | Amount | Status |
-|--------|-------|--------|--------|
-| Atlas Industries | 142 | ₪28,400 | Sent |
-| Wix Studios | 180 | ₪36,000 | Sent |
-| Gett | 96 | ₪19,200 | Sent |
-| CheckPoint | 88 | ₪17,600 | Paid |
-| Monday.com | 64 | ₪12,800 | Paid |
-| Fiverr | 52 | ₪10,400 | Paid |
-| Lemonade | 48 | ₪9,600 | Paid |
-| FinBridge | 40 | ₪8,000 | Paid |
-| Taboola | 36 | ₪7,200 | Paid |
-| Other (3) | 30 | ₪6,000 | Paid |
+**Total Operating Expenses:** $47,830
 
-## Revenue Trend
+## Net Income
+- **Operating Income:** $40,470
+- **Interest & Other:** ($500)
+- **Net Profit:** $39,970 (21.9% margin)
 
-- January 2026: ₪132,500
-- February 2026: ₪148,200 (+12%)
-- Projected March: ₪155,000
+## Cash Flow
+- Beginning Balance: $45,200
+- Receipts: $175,300
+- Payments: ($158,400)
+- Ending Balance: $62,100
 
----
-
-*Report uploaded to Google Drive (Finance folder)*`,
+## Key Metrics
+- **Profit Margin:** 21.9%
+- **Cash Position:** Strong
+- **Days Payable Outstanding:** 22 days
+- **Days Sales Outstanding:** 18 days`,
+  },
 };
 
-export function DocumentViewer({ doc, onClose }: DocumentViewerProps) {
-  const [fullscreen, setFullscreen] = useState(false);
-  const [editing, setEditing] = useState(false);
-  const [content, setContent] = useState(
-    mockContents[doc.id] || `# ${doc.name}\n\n*Document content will be loaded from the agent output.*\n\nGenerated by ${doc.agent} on ${doc.date}.\n\nDepartment: ${doc.department}\nFormat: ${doc.format}\nStatus: ${doc.status}`
-  );
-
-  const handleSave = () => {
-    setEditing(false);
-    addToast(`${doc.name} saved`, 'success');
-  };
+export function DocumentViewer({ documentId, onClose }: DocumentViewerProps) {
+  const doc = documents[documentId];
+  if (!doc) return null;
 
   return (
-    <div
-      className={clsx(
-        'fixed z-[80] bg-black/60',
-        fullscreen ? 'inset-0' : 'inset-0 flex justify-end'
-      )}
-      onClick={onClose}
-    >
-      <div
-        className={clsx(
-          'bg-[#0d0d1a] flex flex-col animate-slide-right',
-          fullscreen
-            ? 'w-full h-full'
-            : 'w-full max-w-3xl h-full border-l border-surface-border'
-        )}
-        onClick={e => e.stopPropagation()}
-      >
+    <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+      <div className="bg-surface border border-surface-border rounded-xl w-full max-w-4xl max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-surface-border shrink-0">
-          <div className="min-w-0">
-            <h3 className="text-base font-semibold text-white truncate">{doc.name}</h3>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="text-xs text-gray-500">{doc.agent}</span>
-              <span className="text-xs text-gray-600">·</span>
-              <span className="text-xs text-gray-500">{doc.department}</span>
-              <span className="text-xs text-gray-600">·</span>
-              <span className="text-xs text-gray-500">{doc.date}</span>
-              <span className={clsx(
-                'text-[10px] font-semibold px-2 py-0.5 rounded-md uppercase',
-                doc.format === 'PDF' ? 'bg-blue-500/20 text-blue-400' :
-                doc.format === 'XLSX' ? 'bg-green-500/20 text-green-400' :
-                'bg-purple-500/20 text-purple-400'
-              )}>
-                {doc.format}
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 shrink-0">
-            {editing ? (
-              <button
-                onClick={handleSave}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-accent-400 bg-accent-500/10 hover:bg-accent-500/20 border border-accent-500/20"
-              >
-                <Save className="w-3.5 h-3.5" />
-                Save
-              </button>
-            ) : (
-              <button
-                onClick={() => setEditing(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-brand-400 bg-brand-500/10 hover:bg-brand-500/20 border border-brand-500/20"
-              >
-                <Pencil className="w-3.5 h-3.5" />
-                Edit
-              </button>
-            )}
-            <button
-              onClick={() => addToast(`Downloading ${doc.name}`, 'success')}
-              className="p-2 rounded-lg text-gray-300 bg-surface-overlay hover:bg-surface-overlay/80 border border-surface-border"
-              title="Download"
-            >
-              <Download className="w-3.5 h-3.5" />
-            </button>
-            {doc.status === 'draft' && (
-              <button
-                onClick={() => addToast(`Sending ${doc.name} to client`, 'success')}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-accent-400 bg-accent-500/10 hover:bg-accent-500/20 border border-accent-500/20"
-              >
-                <Send className="w-3.5 h-3.5" />
-                Send
-              </button>
-            )}
-            <button
-              onClick={() => setFullscreen(!fullscreen)}
-              className="p-2 rounded-lg text-gray-300 bg-surface-overlay hover:bg-surface-overlay/80 border border-surface-border"
-              title={fullscreen ? 'Exit fullscreen' : 'Fullscreen'}
-            >
-              {fullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
-            </button>
-            <button
-              onClick={onClose}
-              className="p-2 rounded-lg text-gray-300 hover:bg-surface-raised"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
+        <div className="flex items-center justify-between p-6 border-b border-surface-border">
+          <h2 className="text-xl font-bold text-white">{doc.title}</h2>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-lg hover:bg-surface-raised transition-colors text-gray-400 hover:text-white"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-6">
-          {editing ? (
-            <textarea
-              value={content}
-              onChange={e => setContent(e.target.value)}
-              className="w-full h-full min-h-[600px] bg-surface border border-surface-border rounded-xl p-5 text-sm text-gray-200 font-mono leading-relaxed resize-none focus:outline-none focus:border-brand-500"
-            />
-          ) : (
-            <div className="prose-dark max-w-none">
-              {content.split('\n').map((line, i) => {
-                if (line.startsWith('# '))
-                  return <h1 key={i} className="text-2xl font-bold text-white mb-4 mt-6 first:mt-0">{line.slice(2)}</h1>;
-                if (line.startsWith('## '))
-                  return <h2 key={i} className="text-lg font-semibold text-white mb-3 mt-6">{line.slice(3)}</h2>;
-                if (line.startsWith('### '))
-                  return <h3 key={i} className="text-base font-semibold text-white mb-2 mt-4">{line.slice(4)}</h3>;
-                if (line.startsWith('---'))
-                  return <hr key={i} className="border-surface-border my-6" />;
-                if (line.startsWith('| ') && line.includes('|')) {
-                  const cells = line.split('|').filter(c => c.trim());
-                  const isHeader = i + 1 < content.split('\n').length && content.split('\n')[i + 1]?.match(/^\|[\s-|]+$/);
-                  const isSeparator = line.match(/^\|[\s-|]+$/);
-                  if (isSeparator) return null;
+        <div className="flex-1 overflow-y-auto p-8">
+          <div className="prose prose-invert max-w-none">
+            <div className="space-y-4 text-gray-300">
+              {doc.content.split('\n').map((line, i) => {
+                if (line.startsWith('# ')) {
                   return (
-                    <div key={i} className="flex border-b border-surface-border">
-                      {cells.map((cell, ci) => (
-                        <div key={ci} className={clsx(
-                          'flex-1 px-3 py-2 text-xs',
-                          isHeader ? 'font-semibold text-gray-300' : 'text-gray-400'
-                        )}>
-                          {cell.trim().replace(/\*\*(.*?)\*\*/g, '$1')}
-                        </div>
-                      ))}
+                    <h1 key={i} className="text-3xl font-bold text-white mt-6 mb-4">
+                      {line.replace('# ', '')}
+                    </h1>
+                  );
+                }
+                if (line.startsWith('## ')) {
+                  return (
+                    <h2 key={i} className="text-2xl font-bold text-white mt-5 mb-3">
+                      {line.replace('## ', '')}
+                    </h2>
+                  );
+                }
+                if (line.startsWith('### ')) {
+                  return (
+                    <h3 key={i} className="text-lg font-semibold text-gray-200 mt-4 mb-2">
+                      {line.replace('### ', '')}
+                    </h3>
+                  );
+                }
+                if (line.startsWith('- ')) {
+                  return (
+                    <li key={i} className="ml-6 text-gray-300">
+                      {line.replace('- ', '')}
+                    </li>
+                  );
+                }
+                if (line.startsWith('|')) {
+                  return (
+                    <div key={i} className="my-4 overflow-x-auto">
+                      <pre className="text-xs bg-surface-raised p-3 rounded border border-surface-border text-gray-300">
+                        {line}
+                      </pre>
                     </div>
                   );
                 }
-                if (line.startsWith('- '))
-                  return <div key={i} className="flex items-start gap-2 text-sm text-gray-300 my-1 ml-2"><span className="text-brand-400 mt-0.5">•</span>{renderInline(line.slice(2))}</div>;
-                if (line.startsWith('**') && line.endsWith('**'))
-                  return <p key={i} className="text-sm font-semibold text-white my-1">{line.replace(/\*\*/g, '')}</p>;
-                if (line.startsWith('*') && line.endsWith('*'))
-                  return <p key={i} className="text-xs text-gray-500 italic my-1">{line.replace(/\*/g, '')}</p>;
-                if (line.trim() === '')
-                  return <div key={i} className="h-3" />;
-                return <p key={i} className="text-sm text-gray-300 my-1 leading-relaxed">{renderInline(line)}</p>;
+                if (line.startsWith('**') || line.startsWith('_')) {
+                  return (
+                    <p key={i} className="text-gray-300 font-medium">
+                      {line.replace(/\*\*/g, '').replace(/__/g, '')}
+                    </p>
+                  );
+                }
+                if (line.trim() === '') {
+                  return <div key={i} className="h-2" />;
+                }
+                return (
+                  <p key={i} className="text-gray-300 leading-relaxed">
+                    {line}
+                  </p>
+                );
               })}
             </div>
-          )}
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-end gap-2 p-6 border-t border-surface-border">
+          <button className="p-2 rounded-lg hover:bg-surface-raised transition-colors text-gray-400 hover:text-white">
+            <Share2 className="w-4 h-4" />
+          </button>
+          <button className="p-2 rounded-lg hover:bg-surface-raised transition-colors text-gray-400 hover:text-white">
+            <Download className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </div>
   );
-}
-
-function renderInline(text: string) {
-  // Simple bold/italic rendering
-  const parts = text.split(/(\*\*.*?\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**'))
-      return <strong key={i} className="text-white font-semibold">{part.slice(2, -2)}</strong>;
-    return <span key={i}>{part}</span>;
-  });
 }
