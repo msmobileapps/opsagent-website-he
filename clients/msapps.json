@@ -5,6 +5,15 @@
   "timezone": "Asia/Jerusalem",
   "industry": "tech / AI consulting",
   "company_size": "small team, 5-15 people",
+  "tunnel_url": "http://localhost:4242",
+  "vm_id": "vm-msapps-001",
+  "dashboard": {
+    "route": "/demo/msapps",
+    "language": "en",
+    "rtl": false,
+    "brand_color": "brand",
+    "logo_icon": "Zap"
+  },
   "agents": {
     "lead-pipeline": {
       "enabled": true,
