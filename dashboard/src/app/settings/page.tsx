@@ -7,19 +7,13 @@ import {
   Clock,
   Mail,
   Shield,
-  CreditCard,
-  Receipt,
-  TrendingUp,
-  Zap,
-  Plus,
-  Trash2,
   Circle,
   Server,
   ExternalLink,
   RefreshCw,
 } from 'lucide-react';
 import { useApi } from '@/lib/use-api';
-import { useClient, ClientSummary } from '@/lib/client-context';
+import { useClient } from '@/lib/client-context';
 
 function Toggle({ enabled, onToggle }: { enabled: boolean; onToggle: () => void }) {
   return (
@@ -44,7 +38,7 @@ function Toggle({ enabled, onToggle }: { enabled: boolean; onToggle: () => void 
 // ── Client Management Panel ──────────────────────────────────────────────────
 
 function ClientManagement() {
-  const { clients, selectedClient, setSelectedClientId, refreshClients } = useClient();
+  const { clients, selectedClient, setSelectedClientId } = useClient();
   const [healthResults, setHealthResults] = useState<Record<string, { connected: boolean; latencyMs: number | null; checking: boolean }>>({});
 
   const checkHealth = async (clientId: string) => {

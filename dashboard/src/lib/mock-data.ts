@@ -660,7 +660,7 @@ export const executionLogs: ExecutionLog[] = [
           { icon: 'alert', text: 'Elite Electric — Insurance expires March 29 (2 days!), assigned to 3 active projects', highlight: true, tag: 'URGENT', tagColor: 'red', actions: [
             { label: 'View Sub', style: 'primary', icon: 'eye' },
             { label: 'Send Renewal Reminder', style: 'success', icon: 'send' },
-            { label: 'Pull from Jobs', style: 'warning', icon: 'user-minus' },
+            { label: 'Pull from Jobs', style: 'secondary', icon: 'user-minus' },
           ] },
           { icon: 'alert', text: 'ABC Plumbing — Insurance expires April 2 (6 days)', highlight: true, tag: 'EXPIRING', tagColor: 'orange', actions: [
             { label: 'View Sub', style: 'primary', icon: 'eye' },
@@ -669,7 +669,7 @@ export const executionLogs: ExecutionLog[] = [
           { icon: 'warning', text: 'Quickfix Repairs — Rating dropped to 3.2★ (5 recent complaints)', highlight: true, tag: 'REVIEW', tagColor: 'red', actions: [
             { label: 'View Sub', style: 'primary', icon: 'eye' },
             { label: 'Review Complaints', style: 'success', icon: 'eye' },
-            { label: 'Pause Assignments', style: 'warning', icon: 'pause' },
+            { label: 'Pause Assignments', style: 'secondary', icon: 'pause' },
           ] },
           { icon: 'warning', text: 'Budget HVAC — Rating 3.3★ (slow response times on calls)', highlight: true, tag: 'REVIEW', tagColor: 'orange', actions: [
             { label: 'View Sub', style: 'primary', icon: 'eye' },
@@ -741,6 +741,7 @@ export const executionLogs: ExecutionLog[] = [
     completedAt: '2026-03-27T05:52:18Z',
     status: 'success',
     summary: 'Rankings update — 4 keywords improved, houston kitchen remodel now #3, 2 new competitor threats',
+    details: [],
   },
   {
     id: 'log-010',
@@ -751,6 +752,7 @@ export const executionLogs: ExecutionLog[] = [
     completedAt: '2026-03-27T14:04:33Z',
     status: 'success',
     summary: 'Hourly sync — 3 new Closed-Won deals pushed to Monday.com, 2 invoices created in QuickBooks',
+    details: [],
   },
   {
     id: 'log-011',
@@ -761,6 +763,7 @@ export const executionLogs: ExecutionLog[] = [
     completedAt: '2026-03-27T07:12:45Z',
     status: 'success',
     summary: 'Executive summary compiled — 4 action items flagged for CEO attention',
+    details: [],
   },
   {
     id: 'log-012',
@@ -771,6 +774,7 @@ export const executionLogs: ExecutionLog[] = [
     completedAt: '2026-03-26T08:18:30Z',
     status: 'success',
     summary: '3 posts scheduled, responded to 2 Google reviews (1 negative — draft pending CEO approval)',
+    details: [],
   },
 ];
 

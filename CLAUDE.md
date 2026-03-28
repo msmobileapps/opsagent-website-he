@@ -6,9 +6,36 @@ OpsAgent is an AI-powered operations automation platform. Each client gets a **v
 
 Built by **MSApps** (tech/AI consulting company run by Michal Shatz).
 
-## Current Stage (2026-03-27)
+## Current Stage (2026-03-28)
 
-**POC phase** — building the multi-client virtual Mac + dashboard architecture. The old single-server model (Claude Agent SDK running agents directly) works and is kept for reference below. The new architecture replaces it.
+**POC phase — multi-client infrastructure complete.** The following are built and working:
+
+### What's Built (New Architecture)
+- **Client Registry** (`src/client-registry.js`) — manages multi-client state, health checks, CRUD
+- **Tunnel Proxy** (`src/tunnel-proxy.js`) — forwards API/SSE requests to client VMs via tunnel URLs
+- **Dashboard API** — `/api/clients`, `/api/health`, `/api/proxy/:clientId/*` endpoints
+- **Client Context** (`dashboard/src/lib/client-context.tsx`) — React context for selected client
+- **Client Switcher** — dropdown in sidebar with connection status indicators
+- **Dashboard Generator** (`scripts/create-client-dashboard.js`) — generates branded per-client dashboards
+- **Client Provisioning** (`scripts/provision-client.js`) — full onboarding: config + dashboard + next steps
+- **Settings Page** — client management panel with VM health checks and dashboard links
+
+### Per-Client Branded Dashboards
+Each client gets a branded dashboard under `/demo/<client-id>/`:
+- `/demo/msapps/` — MSApps (English, LTR)
+- `/demo/demo-client/` — Demo Corp (English, LTR)
+- `/demo/union-motors/` — Union Motors (Hebrew, RTL) — in worktree
+- `/demo/tradeline/` — TradeLine Import/Export — in git branch
+
+Generate new dashboards: `node scripts/create-client-dashboard.js <client-id>`
+Provision full client: `node scripts/provision-client.js --id <id> --name "Name" [options]`
+
+### What's Next
+- [ ] Provision actual virtual Mac VMs (macOS VM provider TBD)
+- [ ] Set up Cloudflare Tunnels for each VM
+- [ ] Install Claude Desktop + MCP servers on VMs
+- [ ] Connect dashboard to live VMs via tunnel_url
+- [ ] Deploy updated dashboard to Netlify
 
 ## Target Architecture (NEW)
 

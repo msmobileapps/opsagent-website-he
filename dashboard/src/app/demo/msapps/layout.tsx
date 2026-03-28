@@ -10,7 +10,6 @@ import {
   Zap,
   Menu,
   X,
-  Zap,
 } from 'lucide-react';
 
 const nav = [

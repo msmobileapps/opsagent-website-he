@@ -271,7 +271,7 @@ export default function DocumentsPage() {
 
       {viewingDoc && (
         <DocumentViewer
-          doc={viewingDoc}
+          documentId={viewingDoc.id}
           onClose={() => setViewingDoc(null)}
         />
       )}

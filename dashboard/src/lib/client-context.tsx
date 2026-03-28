@@ -62,11 +62,12 @@ export function ClientProvider({ children }: { children: ReactNode }) {
         try {
           stored = localStorage.getItem(STORAGE_KEY) || '';
         } catch {}
-        const validStored = data.clients.find((c: ClientSummary) => c.id === stored);
+        const clientsList = data.clients as ClientSummary[];
+        const validStored = clientsList.find(c => c.id === stored);
         if (validStored) {
           setSelectedClientIdState(stored);
         } else {
-          setSelectedClientIdState(data.clients[0].id);
+          setSelectedClientIdState(clientsList[0].id);
         }
       }
     } catch {
@@ -75,7 +76,14 @@ export function ClientProvider({ children }: { children: ReactNode }) {
         const res = await fetch(`${API_BASE}/api/status`);
         if (res.ok) {
           const data = await res.json();
-          const fallback: ClientSummary[] = (data.clients || []).map((c: any) => ({
+          interface StatusClient {
+            id: string;
+            name: string;
+            industry?: string;
+            timezone?: string;
+            agents?: { enabled: boolean }[];
+          }
+          const fallback: ClientSummary[] = ((data.clients || []) as StatusClient[]).map(c => ({
             id: c.id,
             name: c.name,
             industry: c.industry || '',
@@ -83,10 +91,10 @@ export function ClientProvider({ children }: { children: ReactNode }) {
             tunnelUrl: null,
             vmId: null,
             dashboard: null,
-            connected: true, // if /api/status works, we're connected locally
+            connected: true,
             lastHealthCheck: null,
             lastError: null,
-            enabledAgents: c.agents?.filter((a: any) => a.enabled).length || 0,
+            enabledAgents: c.agents?.filter(a => a.enabled).length || 0,
             totalAgents: c.agents?.length || 0,
           }));
           setClients(fallback);

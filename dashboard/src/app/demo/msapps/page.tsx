@@ -1,7 +1,7 @@
 'use client';
 
 import {
-  Activity, CheckCircle2, AlertTriangle, Bot, ArrowUpRight, ArrowDownRight, Target, Users,
+  Activity, CheckCircle2, AlertTriangle, Bot, Target, Users,
 } from 'lucide-react';
 
 const kpiCards = [

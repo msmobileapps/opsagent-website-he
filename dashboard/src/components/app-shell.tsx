@@ -6,7 +6,7 @@ import { ClientProvider } from '@/lib/client-context';
 function GlobalDocViewer() {
   const { currentDoc, closeDoc } = useDocViewer();
   if (!currentDoc) return null;
-  return <DocumentViewer doc={currentDoc} onClose={closeDoc} />;
+  return <DocumentViewer documentId={currentDoc.id} onClose={closeDoc} />;
 }
 
 export function AppShell({ children }: { children: React.ReactNode }) {
