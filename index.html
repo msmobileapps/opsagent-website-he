@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpsAgent — AI-Powered Operations for Growing Businesses</title>
-    <meta name="description" content="OpsAgent replaces your back-office with AI agents that actually work. Lead management, sales outreach, recruiting, finance, and content — all automated.">
+    <title>OpsAgent — אוטומציית תפעול מונעת בינה מלאכותית לעסקים צומחים</title>
+    <meta name="description" content="OpsAgent מחליף את הבק-אופיס שלכם בסוכני AI שבאמת עובדים. ניהול לידים, אאוטריצ׳ מכירות, גיוס, פיננסים ותוכן — הכל אוטומטי.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -34,6 +34,7 @@
             color: var(--gray-900);
             line-height: 1.6;
             overflow-x: hidden;
+            direction: rtl;
         }
 
         /* ===== NAV ===== */
@@ -98,6 +99,26 @@
 
         .nav-links a:hover { color: var(--white); }
 
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch:hover {
+            color: var(--white);
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -149,237 +170,6 @@
             padding: 1rem 2.5rem;
             font-size: 1.1rem;
             border-radius: 14px;
-        }
-
-        /* ===== SOSA SECTION ===== */
-        .sosa-section {
-            background: linear-gradient(180deg, #FAFBFF 0%, #F0EDFF 100%);
-            padding: 6rem 2rem;
-        }
-
-        .sosa-inner {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .sosa-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .sosa-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(108,58,237,0.1);
-            border: 1px solid rgba(108,58,237,0.2);
-            border-radius: 100px;
-            padding: 0.4rem 1.2rem;
-            font-size: 0.8rem;
-            color: var(--primary);
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-
-        .sosa-header h2 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: var(--gray-900);
-            margin-bottom: 0.75rem;
-            line-height: 1.15;
-        }
-
-        .sosa-header h2 .sosa-acronym {
-            background: linear-gradient(135deg, #6C3AED, #4F46E5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .sosa-header .sosa-subtitle {
-            font-size: 1.15rem;
-            color: var(--gray-500);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.7;
-            font-style: italic;
-        }
-
-        .sosa-abstract {
-            background: white;
-            border: 1px solid rgba(108,58,237,0.12);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 24px rgba(108,58,237,0.06);
-        }
-
-        .sosa-abstract h3 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .sosa-abstract p {
-            font-size: 1.02rem;
-            color: var(--gray-700);
-            line-height: 1.85;
-        }
-
-        .sosa-pillars {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .sosa-pillar {
-            background: white;
-            border: 1px solid rgba(108,58,237,0.1);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
-        }
-
-        .sosa-pillar:hover {
-            border-color: rgba(108,58,237,0.25);
-            box-shadow: 0 8px 30px rgba(108,58,237,0.1);
-            transform: translateY(-3px);
-        }
-
-        .pillar-letter {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .pillar-letter.s1 { background: linear-gradient(135deg, #6C3AED, #8B5CF6); }
-        .pillar-letter.o  { background: linear-gradient(135deg, #4F46E5, #6366F1); }
-        .pillar-letter.s2 { background: linear-gradient(135deg, #059669, #10B981); }
-        .pillar-letter.a  { background: linear-gradient(135deg, #D97706, #F59E0B); }
-
-        .sosa-pillar h4 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 0.6rem;
-        }
-
-        .sosa-pillar p {
-            font-size: 0.92rem;
-            color: var(--gray-500);
-            line-height: 1.75;
-        }
-
-        .sosa-pillar .pillar-formal {
-            font-size: 0.82rem;
-            color: var(--gray-700);
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-style: italic;
-            background: rgba(108,58,237,0.04);
-            border-left: 3px solid var(--primary-light);
-            padding: 0.75rem 1rem;
-            margin-top: 1rem;
-            border-radius: 0 8px 8px 0;
-            line-height: 1.7;
-        }
-
-        .sosa-body {
-            margin-bottom: 3rem;
-        }
-
-        .sosa-body h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 1rem;
-            margin-top: 2.5rem;
-        }
-
-        .sosa-body h3:first-child {
-            margin-top: 0;
-        }
-
-        .sosa-body p {
-            font-size: 1rem;
-            color: var(--gray-700);
-            line-height: 1.85;
-            margin-bottom: 1rem;
-        }
-
-        .sosa-impl {
-            background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #312E81 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            color: white;
-        }
-
-        .sosa-impl h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-        }
-
-        .sosa-impl .impl-subtitle {
-            color: rgba(255,255,255,0.6);
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .impl-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-        }
-
-        .impl-item {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 14px;
-            padding: 1.5rem;
-        }
-
-        .impl-item h5 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-            color: white;
-        }
-
-        .impl-item p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.65;
-        }
-
-        .sosa-cite {
-            text-align: center;
-            margin-top: 2.5rem;
-            font-size: 0.8rem;
-            color: var(--gray-500);
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-            .sosa-header h2 { font-size: 2rem; }
-            .sosa-pillars { grid-template-columns: 1fr; }
-            .impl-grid { grid-template-columns: 1fr; }
-            .sosa-impl { padding: 2rem; }
-            .sosa-abstract { padding: 1.5rem; }
         }
 
         /* ===== HERO ===== */
@@ -489,9 +279,7 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .hero-stat {
-            text-align: center;
-        }
+        .hero-stat { text-align: center; }
 
         .hero-stat .number {
             font-size: 2rem;
@@ -509,100 +297,18 @@
         /* Hero Visual */
         .hero-visual {
             position: relative;
+            max-width: 560px;
+            margin: 0 auto;
         }
 
-        .dashboard-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.1);
+        .hero-visual img {
+            width: 100%;
             border-radius: 20px;
-            padding: 2rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .dashboard-title {
-            color: var(--white);
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .status-live {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--accent);
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .status-live .dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        .agent-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.75rem 1rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 12px;
-            margin-bottom: 0.5rem;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .agent-info {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .agent-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-        }
-
-        .agent-name {
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .agent-status {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .agent-result {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 0.85rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         /* ===== SECTIONS ===== */
-        section {
-            padding: 6rem 2rem;
-        }
+        section { padding: 6rem 2rem; }
 
         .section-inner {
             max-width: 1200px;
@@ -639,9 +345,7 @@
         }
 
         /* ===== PROBLEM ===== */
-        .problem {
-            background: var(--gray-100);
-        }
+        .problem { background: var(--gray-100); }
 
         .problem-grid {
             display: grid;
@@ -662,10 +366,7 @@
             box-shadow: 0 12px 40px rgba(0,0,0,0.08);
         }
 
-        .problem-card .icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+        .problem-card .icon { font-size: 2rem; margin-bottom: 1rem; }
 
         .problem-card h3 {
             font-size: 1.2rem;
@@ -741,9 +442,7 @@
             margin-bottom: 1.25rem;
         }
 
-        .service-features {
-            list-style: none;
-        }
+        .service-features { list-style: none; }
 
         .service-features li {
             font-size: 0.85rem;
@@ -773,13 +472,11 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            position: relative;
         }
 
         .step {
             text-align: center;
             padding: 2rem;
-            position: relative;
         }
 
         .step-number {
@@ -858,9 +555,7 @@
         }
 
         /* ===== PRICING ===== */
-        .pricing {
-            background: var(--gray-100);
-        }
+        .pricing { background: var(--gray-100); }
 
         .pricing-grid {
             display: grid;
@@ -994,6 +689,7 @@
         .footer-links {
             display: flex;
             gap: 1.5rem;
+            align-items: center;
         }
 
         .footer-links a {
@@ -1007,13 +703,21 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 968px) {
-            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
             .hero p { margin: 0 auto 2rem; }
             .hero-ctas { justify-content: center; }
             .hero-stats { justify-content: center; }
             .hero-visual { margin-top: 2rem; }
             .hero h1 { font-size: 2.5rem; }
-            .problem-grid, .services-grid, .steps, .pricing-grid { grid-template-columns: 1fr; }
+
+            .problem-grid, .services-grid, .steps, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
             .proof-card { grid-template-columns: 1fr; }
             .pricing-card.featured { transform: none; }
             .nav-links { display: none; }
@@ -1039,685 +743,604 @@
     </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="navbar">
-    <div class="nav-inner">
-        <a href="#" class="logo">
-            <div class="logo-icon">O</div>
-            OpsAgent
-        </a>
-        <div class="nav-links">
-            <a href="#services">Services</a>            <a href='/intake'>Integrations</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#sosa">SOSA&trade;</a>
-            <a href="#security">Security</a>
-            <a href="#pricing">Pricing</a>
-            <a href="/intake" class="btn btn-primary">Get Started</a>
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">O</div>
+                OpsAgent
+            </a>
+            <div class="nav-links">
+                <a href="#services">שירותים</a>
+                <a href="/he/integrations">אינטגרציות</a>
+                <a href="#how-it-works">איך זה עובד</a>
+                <a href="#security">אבטחה</a>
+                <a href="#pricing">מחירים</a>
+                <a href="#contact" class="btn btn-primary">התחילו עכשיו</a>
+                <a href="../" class="lang-switch">🌐 English</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-inner">
-        <div>
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Now in Private Beta
-            </div>
-            <h1>Your AI-Powered<br><span class="gradient-text">Operations Team</span></h1>
-            <p>OpsAgent replaces your back-office with AI agents that actually work. Lead management, sales outreach, recruiting, finance, and content — all automated, all measured by outcomes.</p>
-            <div class="hero-ctas">
-                <a href="/intake" class="btn btn-primary btn-lg">Book a Demo</a>
-                <a href="#services" class="btn btn-outline btn-lg">See What We Automate</a>
-            </div>
-            <div style="margin-top: 1rem;">
-                <a href="#sosa" style="color: rgba(255,255,255,0.6); font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.95)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
-                    <span style="background: linear-gradient(135deg, #6C3AED, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">SOSA&trade;</span>&nbsp;Read the Research Framework &rarr;
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="number">96%</div>
-                    <div class="label">Gross Margin</div>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    כעת בבטא פרטית
                 </div>
-                <div class="hero-stat">
-                    <div class="number">18</div>
-                    <div class="label">Departments Automated</div>
+                <h1>צוות התפעול שלכם<br><span class="gradient-text">מונע בינה מלאכותית</span></h1>
+                <p>OpsAgent מחליף את הבק-אופיס שלכם בסוכני AI שבאמת עובדים. ניהול לידים, אאוטריצ׳ מכירות, גיוס, פיננסים ותוכן — הכל אוטומטי, הכל נמדד לפי תוצאות.</p>
+                <div class="hero-ctas">
+                    <a href="/intake" class="btn btn-primary btn-lg">קבעו דמו</a>
+                    <a href="#services" class="btn btn-outline btn-lg">ראו מה אנחנו מייעלים</a>
                 </div>
-                <div class="hero-stat">
-                    <div class="number">24/7</div>
-                    <div class="label">Always Running</div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="number">96%</div>
+                        <div class="label">רווח גולמי</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">18</div>
+                        <div class="label">מחלקות אוטומטיות</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">24/7</div>
+                        <div class="label">פעיל תמיד</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="hero-visual">
-            <img src="dashboard-hero.png" alt="OpsAgent Dashboard — Agent Monitoring" style="width:100%;border-radius:16px;box-shadow:0 25px 80px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);" loading="lazy">
-        </div>
-    </div>
-</section>
 
-<!-- PROBLEM -->
-<section class="problem" id="problem">
-    <div class="section-inner">
-        <div class="section-header">
-            <div class="section-label">The Problem</div>
-            <h2>Your Back-Office Is Eating Your Profits</h2>
-            <p>Service businesses spend 40–60% of revenue on operations that don't generate revenue.</p>
-        </div>
-        <div class="problem-grid">
-            <div class="problem-card fade-in">
-                <div class="icon">💸</div>
-                <h3>Expensive Headcount</h3>
-                <p>Hiring ops managers, bookkeepers, recruiters, and marketing staff costs $250K+/year. Most tasks are repetitive and rule-based.</p>
-            </div>
-            <div class="problem-card fade-in">
-                <div class="icon">🐌</div>
-                <h3>Slow & Error-Prone</h3>
-                <p>Manual lead follow-ups fall through the cracks. Invoices don't match. Candidate screening takes days instead of minutes.</p>
-            </div>
-            <div class="problem-card fade-in">
-                <div class="icon">📉</div>
-                <h3>SaaS Tool Sprawl</h3>
-                <p>You're paying for 10+ SaaS tools that don't talk to each other. The $285B SaaSpocalypse proved this model is broken.</p>
+            <div class="hero-visual">
+                <img src="/dashboard-hero.png" alt="OpsAgent Dashboard — Agent Monitoring" style="width:100%;border-radius:16px;box-shadow:0 25px 80px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);" loading="lazy">
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- SERVICES -->
-<section id="services">
-    <div class="section-inner">
-        <div class="section-header">
-            <div class="section-label">What We Automate</div>
-            <h2>18 Departments. One AI Operations Layer.</h2>
-            <p>Every agent runs in production — not a demo, not a prototype. Battle-tested on a real business.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(108,58,237,0.1);">📊</div>
-                <h3>Lead Management</h3>
-                <p>AI scans your pipeline daily, prioritizes leads, triggers follow-ups, and delivers morning briefings.</p>
-                <ul class="service-features">
-                    <li>Daily pipeline scanning</li>
-                    <li>Smart lead prioritization</li>
-                    <li>Automated follow-up sequences</li>
-                    <li>Morning briefing reports</li>
-                </ul>
+    <!-- PROBLEM -->
+    <section class="problem" id="problem">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">הבעיה</div>
+                <h2>הבק-אופיס שלכם אוכל את הרווחים</h2>
+                <p>עסקי שירות מוציאים 40–60% מההכנסות על תפעול שלא מייצר הכנסה.</p>
             </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(16,185,129,0.1);">💼</div>
-                <h3>Sales Outreach</h3>
-                <p>Personalized LinkedIn outreach at scale. Segment, message, track responses — all hands-free.</p>
-                <ul class="service-features">
-                    <li>LinkedIn segmentation</li>
-                    <li>Personalized messaging</li>
-                    <li>Response tracking</li>
-                    <li>CRM updates</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(59,130,246,0.1);">🎯</div>
-                <h3>Recruiting</h3>
-                <p>Full-cycle recruiting — from job posting to candidate submission — handled end-to-end by AI.</p>
-                <ul class="service-features">
-                    <li>Multi-platform job posting</li>
-                    <li>Technical skills scanning</li>
-                    <li>CV screening & fit scoring</li>
-                    <li>CV prep & formatting for submission</li>
-                    <li>Candidate pipeline management</li>
-                    <li>Client communication & updates</li>
-                    <li>Interview scheduling</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(239,68,68,0.1);">🧾</div>
-                <h3>Finance, Orders & Inventory</h3>
-                <p>From quote to invoice — quotes, orders, receipts, invoices, and inventory managed end-to-end, automatically.</p>
-                <ul class="service-features">
-                    <li>Quotes & proposals</li>
-                    <li>Order management</li>
-                    <li>Invoice generation</li>
-                    <li>Receipt matching</li>
-                    <li>Inventory tracking</li>
-                    <li>Bank reconciliation</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(245,158,11,0.1);">📝</div>
-                <h3>Content & Social</h3>
-                <p>Daily posts across LinkedIn, Instagram, Facebook, and X. On-brand, on-schedule, on autopilot.</p>
-                <ul class="service-features">
-                    <li>Multi-platform publishing</li>
-                    <li>Brand voice consistency</li>
-                    <li>Content calendar</li>
-                    <li>Engagement tracking</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(168,85,247,0.1);">📋</div>
-                <h3>Internal Ops</h3>
-                <p>Status reports, internal comms, document generation — everything that keeps your company running.</p>
-                <ul class="service-features">
-                    <li>Status reports</li>
-                    <li>Document generation</li>
-                    <li>Team communications</li>
-                    <li>Process documentation</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(6,182,212,0.1);">🌐</div>
-                <h3>Sites Health</h3>
-                <p>Continuous monitoring of your websites and client sites — uptime, performance, and broken links detected automatically.</p>
-                <ul class="service-features">
-                    <li>Uptime & downtime alerts</li>
-                    <li>Performance checks</li>
-                    <li>Broken link detection</li>
-                    <li>Instant notifications</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(234,179,8,0.1);">📅</div>
-                <h3>Project Management</h3>
-                <p>Track milestones, deadlines, and deliverables across all client projects — with automatic status updates and blocker alerts.</p>
-                <ul class="service-features">
-                    <li>Milestone tracking</li>
-                    <li>Deadline alerts</li>
-                    <li>Monday / Jira / Trello sync</li>
-                    <li>Weekly progress reports</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(20,184,166,0.1);">🤝</div>
-                <h3>Client Management</h3>
-                <p>Full visibility into every client relationship — history, open items, upcoming renewals, and satisfaction signals, all in one place.</p>
-                <ul class="service-features">
-                    <li>Client 360° view</li>
-                    <li>Renewal & upsell alerts</li>
-                    <li>Meeting summaries</li>
-                    <li>Relationship health score</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(251,146,60,0.1);">🖼️</div>
-                <h3>Digital Assets Management</h3>
-                <p>Organize, tag, and retrieve brand assets, design files, and media — automatically filed by client, campaign, or project.</p>
-                <ul class="service-features">
-                    <li>Auto-tagging & filing</li>
-                    <li>Google Drive / Dropbox sync</li>
-                    <li>Version tracking</li>
-                    <li>Quick asset retrieval</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(236,72,153,0.1);">🔍</div>
-                <h3>Prospecting</h3>
-                <p>Finds new leads that match your ideal client profile — researches companies, enriches contact data, and queues them for outreach.</p>
-                <ul class="service-features">
-                    <li>ICP-based company search</li>
-                    <li>Contact enrichment</li>
-                    <li>LinkedIn & web research</li>
-                    <li>Outreach queue building</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(99,102,241,0.1);">📄</div>
-                <h3>Proposals & Budgeting</h3>
-                <p>Generates professional proposals, tracks budget vs. actuals per project, and flags scope creep before it becomes a problem.</p>
-                <ul class="service-features">
-                    <li>Proposal generation</li>
-                    <li>Budget vs. actuals tracking</li>
-                    <li>Scope creep alerts</li>
-                    <li>Approval workflows</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(52,211,153,0.1);">👩‍💼</div>
-                <h3>Team Management & Time Tracking</h3>
-                <p>Monitors hours in Toggl, tracks team utilization, surfaces capacity gaps, and generates billing-ready time reports automatically.</p>
-                <ul class="service-features">
-                    <li>Toggl integration</li>
-                    <li>Utilization dashboards</li>
-                    <li>Capacity planning alerts</li>
-                    <li>Billing-ready reports</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(59,130,246,0.1);">📧</div>
-                <h3>Email & Calendar Automation</h3>
-                <p>Triages your inbox, drafts replies, schedules meetings, and keeps your calendar clean — so you start every day organized.</p>
-                <ul class="service-features">
-                    <li>Smart inbox triage</li>
-                    <li>AI-drafted replies</li>
-                    <li>Calendar scheduling</li>
-                    <li>Meeting prep briefs</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(139,92,246,0.1);">🗂️</div>
-                <h3>Knowledge Base & Client Docs</h3>
-                <p>Stores and organizes all company knowledge, client documents, and code per client — searchable, structured, and always up to date.</p>
-                <ul class="service-features">
-                    <li>Per-client document storage</li>
-                    <li>Code & spec organization</li>
-                    <li>Smart search & retrieval</li>
-                    <li>Auto-updated from emails & meetings</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(239,68,68,0.1);">🔍</div>
-                <h3>Code Review</h3>
-                <p>Automated code review on every PR — catches bugs, enforces standards, and flags issues before they reach production.</p>
-                <ul class="service-features">
-                    <li>Pull request analysis</li>
-                    <li>Code quality checks</li>
-                    <li>Standards enforcement</li>
-                    <li>Developer feedback summaries</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(220,38,38,0.1);">🔐</div>
-                <h3>Code Security</h3>
-                <p>Scans your codebase for vulnerabilities, exposed secrets, and dependency risks — continuously and automatically.</p>
-                <ul class="service-features">
-                    <li>Vulnerability scanning</li>
-                    <li>Secret & credential detection</li>
-                    <li>Dependency risk alerts</li>
-                    <li>Security report generation</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(251,191,36,0.1);">🖼️</div>
-                <h3>Digital Assets Health</h3>
-                <p>Monitors your digital assets across platforms — detects broken links, expired content, and missing files before clients notice.</p>
-                <ul class="service-features">
-                    <li>Cross-platform asset monitoring</li>
-                    <li>Broken link detection</li>
-                    <li>Expired content alerts</li>
-                    <li>Asset inventory reports</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(16,185,129,0.1);">⚙️</div>
-                <h3>Automations</h3>
-                <p>Custom workflow automations that connect your tools and eliminate repetitive tasks — built, monitored, and maintained by AI.</p>
-                <ul class="service-features">
-                    <li>Cross-tool workflow automation</li>
-                    <li>Trigger-based actions</li>
-                    <li>Automation health monitoring</li>
-                    <li>Error alerts & self-healing</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(99,102,241,0.1);">🛡️</div>
-                <h3>Digital Assets Security</h3>
-                <p>Monitors access permissions, detects unauthorized changes, and flags suspicious activity across all digital assets and file storage.</p>
-                <ul class="service-features">
-                    <li>Access permission monitoring</li>
-                    <li>Unauthorized change detection</li>
-                    <li>Suspicious activity alerts</li>
-                    <li>Security audit reports</li>
-                </ul>
-            </div>
-            <div class="service-card fade-in">
-                <div class="service-icon" style="background: rgba(34,197,94,0.1);">📊</div>
-                <h3>Reporting & Analytics</h3>
-                <p>Turns raw data from all your tools into clear daily, weekly, and monthly reports — delivered automatically, no manual work needed.</p>
-                <ul class="service-features">
-                    <li>Cross-tool data aggregation</li>
-                    <li>Daily & weekly briefings</li>
-                    <li>KPI tracking & trends</li>
-                    <li>Custom report scheduling</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- INTEGRATIONS BANNER -->
-<section style="padding: 4rem 2rem; background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #1E1B4B 100%);">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(108,58,237,0.2); border: 1px solid rgba(108,58,237,0.3); border-radius: 100px; padding: 0.4rem 1rem; font-size: 0.85rem; color: #8B5CF6; margin-bottom: 1.5rem;">50+ Integrations</div>
-        <h2 style="font-size: 2.2rem; font-weight: 800; color: white; margin-bottom: 1rem;">Works With Your Existing Tools</h2>
-        <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; max-width: 640px; margin: 0 auto 2rem;">WhatsApp, iMessage, Slack, Monday.com, Trello, Zoho Cliq, Gmail, Google Calendar, Notion, LinkedIn, Toggl, and many more &#8212; all connected securely.</p>
-        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; font-size: 2rem; opacity: 0.7;">🟢 🍎 🟣 🗂️ 🟦 💬 📩 📅 📓 🔗 ⏱️ &#128193;</div>
-        <a href='/integrations' style='display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, #6C3AED, #8B5CF6); color: white; box-shadow: 0 4px 15px rgba(108, 58, 237, 0.4); transition: all 0.3s;'>See All Integrations &#8594;</a>
-    </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how-it-works" id="how-it-works">
-    <div class="section-inner">
-        <div class="section-header">
-            <div class="section-label" style="color: var(--primary-light);">How It Works</div>
-            <h2>Live in Days, Not Months</h2>
-            <p>We connect to your existing tools and deploy AI agents that start delivering results immediately.</p>
-        </div>
-        <div class="steps">
-            <div class="step fade-in">
-                <div class="step-number">1</div>
-                <h3>Discovery Call</h3>
-                <p>We map your operations in 30 minutes. Which departments are costing you the most? Where do tasks fall through the cracks?</p>
-            </div>
-            <div class="step fade-in">
-                <div class="step-number">2</div>
-                <h3>Agent Deployment</h3>
-                <p>We connect to your email, calendar, CRM, and accounting tools via secure OAuth. AI agents go live within days.</p>
-            </div>
-            <div class="step fade-in">
-                <div class="step-number">3</div>
-                <h3>Outcomes Delivered</h3>
-                <p>Leads managed. Invoices matched. Content published. You get a daily briefing of everything your AI team accomplished.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PROOF -->
-<section id="proof">
-    <div class="section-inner">
-        <div class="section-header">
-            <div class="section-label">Proven in Production</div>
-            <h2>Built for Our Own Company First</h2>
-            <p>OpsAgent isn't theory — it runs the entire operations of a real tech company.</p>
-        </div>
-        <div class="proof-card fade-in">
-            <div class="proof-content">
-                <h3>MSApps Case Study</h3>
-                <p>We built OpsAgent to run our own company. Every agent you see here has been running in production for months, handling real leads, real invoices, real recruiting, and real content across multiple platforms.</p>
-                <p>The result? A full operations stack running with AI — proven, tested, and ready to deploy for your business.</p>
-                <a class='btn btn-primary' href='/case-study'>See the Full Case Study →</a>
-            </div>
-            <div class="proof-metrics">
-                <div class="metric">
-                    <div class="value">18</div>
-                    <div class="desc">Departments Automated</div>
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <div class="icon">💸</div>
+                    <h3>כוח אדם יקר</h3>
+                    <p>גיוס מנהלי תפעול, מנהלי חשבונות, מגייסים ואנשי שיווק עולה $250K+ בשנה. רוב המשימות חוזרות ומבוססות כללים.</p>
                 </div>
-                <div class="metric">
-                    <div class="value">24/7</div>
-                    <div class="desc">Always-On Operations</div>
+                <div class="problem-card fade-in">
+                    <div class="icon">🐌</div>
+                    <h3>איטי ומועד לטעויות</h3>
+                    <p>מעקבי לידים ידניים נופלים בין הכיסאות. חשבוניות לא מתאימות. סינון מועמדים לוקח ימים במקום דקות.</p>
                 </div>
-                <div class="metric">
-                    <div class="value">96%</div>
-                    <div class="desc">Gross Margin</div>
-                </div>
-                <div class="metric">
-                    <div class="value">Days</div>
-                    <div class="desc">Time to Deploy</div>
+                <div class="problem-card fade-in">
+                    <div class="icon">📉</div>
+                    <h3>בלאגן כלי SaaS</h3>
+                    <p>אתם משלמים על 10+ כלי SaaS שלא מדברים אחד עם השני. אסון ה-SaaS של $285B הוכיח שהמודל הזה שבור.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- SOSA METHODOLOGY -->
-<section class="sosa-section" id="sosa">
-    <div class="sosa-inner">
-        <div class="sosa-header">
-            <div class="sosa-badge">Research Framework</div>
-            <h2>The <span class="sosa-acronym">SOSA&trade;</span> Methodology</h2>
-            <p class="sosa-subtitle">Supervised Orchestrated Secured Agents &mdash; a formal framework for deploying autonomous AI agents in enterprise operations.</p>
-        </div>
-        <div class="sosa-abstract">
-            <h3>Abstract</h3>
-            <p>The rapid proliferation of large language model (LLM)-based agents in enterprise workflows has exposed a critical gap: the absence of a unifying framework that governs how autonomous agents should be supervised, coordinated, and constrained in production environments. Existing approaches treat autonomy and control as opposing forces, resulting in systems that are either too brittle to scale or too opaque to trust. We propose <strong>SOSA&trade; &mdash; Supervised Orchestrated Secured Agents</strong> &mdash; a four-pillar methodology that reconciles agent autonomy with organizational accountability. SOSA provides a formal structure for deploying multi-agent systems that operate continuously, adapt to heterogeneous toolchains, and maintain verifiable compliance with security and governance policies. We further present OpsAgent as a reference implementation of the SOSA framework deployed in production across multiple business verticals.</p>
-        </div>
-        <div class="sosa-pillars">
-            <div class="sosa-pillar fade-in">
-                <div class="pillar-letter s1">S</div>
-                <h4>Supervised</h4>
-                <p>Every agent operates under a defined supervision policy. Human-in-the-loop checkpoints are not optional add-ons &mdash; they are first-class architectural primitives. Supervision is graduated: routine tasks execute autonomously, while high-stakes actions require explicit human approval or are bounded by pre-authorized decision envelopes.</p>
-                <div class="pillar-formal">Formally: for any agent action <em>a</em> with impact score <em>I(a) &gt; &theta;</em>, execution is gated on supervisor approval <em>S(a) = 1</em>, where <em>&theta;</em> is a configurable organizational risk threshold.</div>
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">מה אנחנו מייעלים</div>
+                <h2>18 מחלקות. שכבת תפעול AI אחת.</h2>
+                <p>כל סוכן רץ בפרודקשן — לא דמו, לא פרוטוטייפ. נבדק בקרב על עסק אמיתי.</p>
             </div>
-            <div class="sosa-pillar fade-in">
-                <div class="pillar-letter o">O</div>
-                <h4>Orchestrated</h4>
-                <p>Isolated agents produce isolated outcomes. SOSA mandates an orchestration layer that coordinates agent execution across temporal, informational, and toolchain dimensions. Agents share structured context, respect dependency graphs, and are scheduled according to business-logic DAGs rather than ad-hoc cron triggers.</p>
-                <div class="pillar-formal">The orchestrator maintains a directed acyclic graph <em>G = (V, E)</em> where vertices represent agent tasks and edges encode data dependencies and temporal constraints, ensuring conflict-free concurrent execution.</div>
-            </div>
-            <div class="sosa-pillar fade-in">
-                <div class="pillar-letter s2">S</div>
-                <h4>Secured</h4>
-                <p>Security in SOSA is not a perimeter &mdash; it is a property of every layer. Each agent runs in an isolated execution environment with scoped credentials, zero-trust network boundaries, and cryptographically verifiable audit trails. No agent can access resources beyond its declared permission set, and all inter-agent communication passes through authenticated channels.</p>
-                <div class="pillar-formal">Each agent <em>A<sub>i</sub></em> is assigned a capability set <em>C<sub>i</sub> &sube; C</em> enforced at runtime. Cross-agent communication requires mutual attestation: <em>msg(A<sub>i</sub>, A<sub>j</sub>)</em> is valid iff <em>auth(A<sub>i</sub>) &and; auth(A<sub>j</sub>) = true</em>.</div>
-            </div>
-            <div class="sosa-pillar fade-in">
-                <div class="pillar-letter a">A</div>
-                <h4>Agents</h4>
-                <p>SOSA agents are not scripts with LLM wrappers. They are goal-directed autonomous entities with persistent context, tool-use capabilities, and adaptive planning. Each agent possesses a defined role ontology, success metrics, and failure recovery strategies &mdash; enabling them to operate as reliable participants in a larger organizational system.</p>
-                <div class="pillar-formal">An agent is a tuple <em>A = (R, T, M, P)</em> where <em>R</em> is the role specification, <em>T</em> is the tool manifest, <em>M</em> is the memory/context store, and <em>P</em> is the planning policy governing action selection.</div>
-            </div>
-        </div>
-        <div class="sosa-body">
-            <h3>Why Existing Approaches Fail</h3>
-            <p>The current landscape of AI agent deployment can be characterized by two failure modes. The first is <em>under-autonomy</em>: agents configured as glorified chatbots, requiring human input at every step, producing marginal efficiency gains and high interaction costs. The second is <em>over-autonomy</em>: &ldquo;set and forget&rdquo; agents with insufficient guardrails that produce cascading errors, hallucinate business-critical actions, or silently drift from their intended objectives.</p>
-            <p>Both failure modes stem from the same root cause: the absence of a structured methodology for calibrating the supervision-autonomy spectrum. SOSA addresses this by introducing formal governance primitives at the framework level, ensuring that the degree of autonomy granted to any agent is proportional to its demonstrated reliability, the reversibility of its actions, and the risk tolerance of the domain.</p>
-            <h3>The SOSA Execution Model</h3>
-            <p>In a SOSA-compliant system, agent execution follows a three-phase loop: <strong>Plan</strong>, <strong>Act</strong>, and <strong>Verify</strong>. During the planning phase, the agent decomposes its objective into a sequence of tool calls and information retrievals, subject to the constraints in its capability set. During the action phase, each step is executed against real external systems &mdash; APIs, databases, communication platforms &mdash; with every interaction logged to an immutable audit store. During the verification phase, the orchestrator evaluates the outcome against declared success criteria and updates the agent's context for subsequent runs.</p>
-            <p>This loop is not merely procedural. The verification phase feeds into a continuous improvement mechanism: agents that consistently meet their success criteria earn expanded autonomy boundaries, while agents that exhibit failure patterns are automatically escalated to tighter supervision. SOSA thus implements a formal trust gradient that evolves with observed agent performance.</p>
-            <h3>Implications for Enterprise Adoption</h3>
-            <p>The SOSA methodology directly addresses the three primary barriers to enterprise AI agent adoption: accountability, reliability, and compliance. By requiring full audit trails and graduated supervision, SOSA satisfies regulatory and internal governance requirements without sacrificing operational velocity. By mandating orchestration and structured inter-agent context sharing, SOSA eliminates the coordination failures that plague multi-agent deployments. And by treating security as a first-class design constraint rather than an afterthought, SOSA enables deployment in environments where data sensitivity precludes the use of conventional SaaS-based AI solutions.</p>
-            <p>Organizations adopting SOSA can expect to deploy AI agents that are not merely impressive in demos, but durable in production &mdash; systems that earn trust through verifiable behavior rather than demanding it through marketing claims.</p>
-        </div>
-        <div class="sosa-impl">
-            <h3>OpsAgent: SOSA&trade; in Production</h3>
-            <p class="impl-subtitle">OpsAgent is the first commercial implementation of the SOSA framework. Every architectural decision &mdash; from isolated virtual machine environments to the orchestration scheduler to the human-approval gates &mdash; maps directly to a SOSA pillar.</p>
-            <div class="impl-grid">
-                <div class="impl-item">
-                    <h5>Supervised</h5>
-                    <p>Configurable approval workflows per agent. Daily briefings surface all actions taken. High-impact operations (financial transactions, external communications) require explicit human sign-off.</p>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(108,58,237,0.1);">📊</div>
+                    <h3>ניהול לידים</h3>
+                    <p>AI סורק את ה-Pipeline שלכם יומיומית, מתעדף לידים, מפעיל מעקבים ומספק תדרוך בוקר.</p>
+                    <ul class="service-features">
+                        <li>סריקת Pipeline יומית</li>
+                        <li>תעדוף לידים חכם</li>
+                        <li>רצפי מעקב אוטומטיים</li>
+                        <li>דוחות תדרוך בוקר</li>
+                    </ul>
                 </div>
-                <div class="impl-item">
-                    <h5>Orchestrated</h5>
-                    <p>A centralized scheduler coordinates 18+ agent types across temporal and data dependencies. Agents share context through structured registries, not ad-hoc message passing.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(16,185,129,0.1);">💼</div>
+                    <h3>אאוטריצ׳ מכירות</h3>
+                    <p>אאוטריצ׳ לינקדאין מותאם אישית בקנה מידה. פילוח, שליחת הודעות, מעקב תגובות — הכל ידיים חופשיות.</p>
+                    <ul class="service-features">
+                        <li>פילוח לינקדאין</li>
+                        <li>הודעות מותאמות אישית</li>
+                        <li>מעקב תגובות</li>
+                        <li>עדכוני CRM</li>
+                    </ul>
                 </div>
-                <div class="impl-item">
-                    <h5>Secured</h5>
-                    <p>Each client runs on an isolated virtual machine with scoped OAuth credentials. Zero business data is stored on OpsAgent servers. Every action is logged to an immutable audit trail.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(59,130,246,0.1);">🎯</div>
+                    <h3>גיוס</h3>
+                    <p>מחזור גיוס מלא — מפרסום משרה ועד הגשת מועמד — מנוהל מקצה לקצה על ידי AI.</p>
+                    <ul class="service-features">
+                        <li>פרסום במולטי-פלטפורמה</li>
+                        <li>סריקת מיומנויות טכניות</li>
+                        <li>סינון קורות חיים ודירוג התאמה</li>
+                        <li>הכנת קו"ח ועיצוב להגשה</li>
+                        <li>ניהול Pipeline מועמדים</li>
+                        <li>תקשורת ועדכונים ללקוחות</li>
+                        <li>תיאום ראיונות</li>
+                    </ul>
                 </div>
-                <div class="impl-item">
-                    <h5>Agents</h5>
-                    <p>Goal-directed agents with persistent memory, real tool access (calendars, CRMs, accounting systems), and adaptive planning &mdash; not scripts, not wrappers, not demos.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(239,68,68,0.1);">🧾</div>
+                    <h3>פיננסים, הזמנות ומלאי</h3>
+                    <p>מהצעת מחיר ועד חשבונית — הצעות, הזמנות, קבלות, חשבוניות ומלאי מנוהלים מקצה לקצה, אוטומטית.</p>
+                    <ul class="service-features">
+                        <li>הצעות מחיר</li>
+                        <li>ניהול הזמנות</li>
+                        <li>הפקת חשבוניות</li>
+                        <li>התאמת קבלות</li>
+                        <li>מעקב מלאי</li>
+                        <li>התאמת חשבון בנק</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(245,158,11,0.1);">📝</div>
+                    <h3>תוכן ורשתות חברתיות</h3>
+                    <p>פוסטים יומיים בלינקדאין, אינסטגרם, פייסבוק ו-X. בהתאם למותג, בלוח זמנים, על טייס אוטומטי.</p>
+                    <ul class="service-features">
+                        <li>פרסום במולטי-פלטפורמה</li>
+                        <li>עקביות קול המותג</li>
+                        <li>לוח שנה לתוכן</li>
+                        <li>מעקב אינטראקציות</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(168,85,247,0.1);">📋</div>
+                    <h3>תפעול פנימי</h3>
+                    <p>דוחות סטטוס, תקשורת פנימית, יצירת מסמכים — כל מה ששומר על החברה שלכם בתנועה.</p>
+                    <ul class="service-features">
+                        <li>דוחות סטטוס</li>
+                        <li>יצירת מסמכים</li>
+                        <li>תקשורת צוותית</li>
+                        <li>תיעוד תהליכים</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(6,182,212,0.1);">🌐</div>
+                    <h3>בריאות אתרים</h3>
+                    <p>ניטור רציף של האתרים שלכם ואתרי הלקוחות — זמינות, ביצועים וקישורים שבורים מזוהים אוטומטית.</p>
+                    <ul class="service-features">
+                        <li>התראות זמינות ותקלות</li>
+                        <li>בדיקות ביצועים</li>
+                        <li>זיהוי קישורים שבורים</li>
+                        <li>התראות מיידיות</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(234,179,8,0.1);">📅</div>
+                    <h3>ניהול פרויקטים</h3>
+                    <p>מעקב אחרי אבני דרך, דדליינים ותוצרים בכל פרויקטי הלקוחות — עם עדכוני סטטוס אוטומטיים והתראות חסימות.</p>
+                    <ul class="service-features">
+                        <li>מעקב אבני דרך</li>
+                        <li>התראות דדליין</li>
+                        <li>סנכרון Monday / Jira / Trello</li>
+                        <li>דוחות התקדמות שבועיים</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(20,184,166,0.1);">🤝</div>
+                    <h3>ניהול לקוחות</h3>
+                    <p>נראות מלאה לכל קשר לקוח — היסטוריה, פריטים פתוחים, חידושים קרובים ואיתותי שביעות רצון, הכל במקום אחד.</p>
+                    <ul class="service-features">
+                        <li>תצוגת לקוח 360°</li>
+                        <li>התראות חידוש ו-Upsell</li>
+                        <li>סיכומי פגישות</li>
+                        <li>ציון בריאות קשר</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(251,146,60,0.1);">🖼️</div>
+                    <h3>ניהול נכסים דיגיטליים</h3>
+                    <p>ארגון, תיוג ואחזור נכסי מותג, קבצי עיצוב ומדיה — מתויקים אוטומטית לפי לקוח, קמפיין או פרויקט.</p>
+                    <ul class="service-features">
+                        <li>תיוג ותיוק אוטומטי</li>
+                        <li>סנכרון Google Drive / Dropbox</li>
+                        <li>מעקב גרסאות</li>
+                        <li>אחזור נכסים מהיר</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(236,72,153,0.1);">🔍</div>
+                    <h3>פרוספקטינג</h3>
+                    <p>מוצא לידים חדשים שמתאימים לפרופיל הלקוח האידיאלי שלכם — חוקר חברות, מעשיר נתוני קשר ומכין אותם לאאוטריצ׳.</p>
+                    <ul class="service-features">
+                        <li>חיפוש חברות לפי ICP</li>
+                        <li>העשרת נתוני קשר</li>
+                        <li>מחקר לינקדאין ואינטרנט</li>
+                        <li>בניית תור אאוטריצ׳</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(99,102,241,0.1);">📄</div>
+                    <h3>הצעות מחיר ותקציבים</h3>
+                    <p>מייצר הצעות מקצועיות, עוקב אחר תקציב מול בפועל לכל פרויקט, ומתריע על חריגת סקופ לפני שהיא הופכת לבעיה.</p>
+                    <ul class="service-features">
+                        <li>יצירת הצעות מחיר</li>
+                        <li>מעקב תקציב מול בפועל</li>
+                        <li>התראות חריגת סקופ</li>
+                        <li>תהליכי אישור</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(52,211,153,0.1);">👩‍💼</div>
+                    <h3>ניהול צוות ומעקב שעות</h3>
+                    <p>מנטר שעות ב-Toggl, עוקב אחר ניצולת צוות, מזהה פערי קיבולת ומייצר דוחות זמן מוכנים לחיוב אוטומטית.</p>
+                    <ul class="service-features">
+                        <li>אינטגרציית Toggl</li>
+                        <li>דשבורדי ניצולת</li>
+                        <li>התראות תכנון קיבולת</li>
+                        <li>דוחות מוכנים לחיוב</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(59,130,246,0.1);">📧</div>
+                    <h3>אוטומציית מייל ויומן</h3>
+                    <p>ממיין את תיבת הדואר, טויט תשובות, מתאם פגישות ושומר על היומן שלכם נקי — כדי שתתחילו כל יום מאורגנים.</p>
+                    <ul class="service-features">
+                        <li>מיון תיבת דואר חכם</li>
+                        <li>טיוטות תשובות עם AI</li>
+                        <li>תזמון יומן</li>
+                        <li>תדרוכי הכנה לפגישות</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(139,92,246,0.1);">🗂️</div>
+                    <h3>מאגר ידע ומסמכי לקוח</h3>
+                    <p>מאחסן ומארגן את כל הידע הארגוני, מסמכי לקוח וקוד לפי לקוח — חיפושי, מובנה ותמיד מעודכן.</p>
+                    <ul class="service-features">
+                        <li>אחסון מסמכים לפי לקוח</li>
+                        <li>ארגון קוד ומפרטים</li>
+                        <li>חיפוש ואחזור חכם</li>
+                        <li>עדכון אוטומטי ממיילים ופגישות</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(239,68,68,0.1);">🔍</div>
+                    <h3>סקירת קוד</h3>
+                    <p>סקירת קוד אוטומטית על כל PR — תופס באגים, אוכף סטנדרטים ומסמן בעיות לפני שהן מגיעות לפרודקשן.</p>
+                    <ul class="service-features">
+                        <li>ניתוח Pull Requests</li>
+                        <li>בדיקות איכות קוד</li>
+                        <li>אכיפת סטנדרטים</li>
+                        <li>סיכומי משוב למפתחים</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(220,38,38,0.1);">🔐</div>
+                    <h3>אבטחת קוד</h3>
+                    <p>סורק את בסיס הקוד שלכם לאיתור פגיעויות, סודות חשופים וסיכוני תלויות — באופן רציף ואוטומטי.</p>
+                    <ul class="service-features">
+                        <li>סריקת פגיעויות</li>
+                        <li>זיהוי סודות ואישורים</li>
+                        <li>התראות סיכוני תלויות</li>
+                        <li>הפקת דוחות אבטחה</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(251,191,36,0.1);">🖼️</div>
+                    <h3>בריאות נכסים דיגיטליים</h3>
+                    <p>מנטר את הנכסים הדיגיטליים שלכם בין פלטפורמות — מזהה קישורים שבורים, תוכן שפג תוקפו וקבצים חסרים לפני שלקוחות שמים לב.</p>
+                    <ul class="service-features">
+                        <li>ניטור נכסים חוצה-פלטפורמות</li>
+                        <li>זיהוי קישורים שבורים</li>
+                        <li>התראות תוכן שפג תוקפו</li>
+                        <li>דוחות מלאי נכסים</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(16,185,129,0.1);">⚙️</div>
+                    <h3>אוטומציות</h3>
+                    <p>אוטומציות תהליכי עבודה מותאמות שמחברות את הכלים שלכם ומבטלות משימות חוזרות — נבנות, מנוטרות ומתוחזקות על ידי AI.</p>
+                    <ul class="service-features">
+                        <li>אוטומציית תהליכים חוצי-כלים</li>
+                        <li>פעולות מבוססות טריגרים</li>
+                        <li>ניטור בריאות אוטומציות</li>
+                        <li>התראות שגיאות וריפוי עצמי</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(99,102,241,0.1);">🛡️</div>
+                    <h3>אבטחת נכסים דיגיטליים</h3>
+                    <p>מנטר הרשאות גישה, מזהה שינויים לא מורשים ומסמן פעילות חשודה על פני כל הנכסים הדיגיטליים ואחסון הקבצים.</p>
+                    <ul class="service-features">
+                        <li>ניטור הרשאות גישה</li>
+                        <li>זיהוי שינויים לא מורשים</li>
+                        <li>התראות פעילות חשודה</li>
+                        <li>דוחות אודיט אבטחה</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" style="background: rgba(34,197,94,0.1);">📊</div>
+                    <h3>דוחות ואנליטיקס</h3>
+                    <p>הופך נתונים גולמיים מכל הכלים שלכם לדוחות יומיים, שבועיים וחודשיים ברורים — מסופקים אוטומטית, ללא עבודה ידנית.</p>
+                    <ul class="service-features">
+                        <li>איסוף נתונים חוצה-כלים</li>
+                        <li>תדרוכים יומיים ושבועיים</li>
+                        <li>מעקב KPIs ומגמות</li>
+                        <li>תזמון דוחות מותאם</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <p class="sosa-cite"><a href="/sosa-whitepaper.pdf" style="color: var(--gray-500); text-decoration: underline; text-decoration-style: dotted;">Shatz, M. (2026). &ldquo;SOSA&trade;: Supervised Orchestrated Secured Agents &mdash; A Methodology for Production-Grade Autonomous AI Operations.&rdquo; MSApps Research.</a></p>
-    </div>
-</section>
+    </section>
 
-<!-- DASHBOARD SCREENSHOTS -->
-<section style="background: var(--dark); padding: 5rem 2rem;">
-    <div class="section-inner">
-        <div class="section-header">
-            <div class="section-label" style="color: var(--primary-light);">See It In Action</div>
-            <h2 style="color: var(--white);">A Real Dashboard. Real Agents. Real Results.</h2>
-            <p style="color: rgba(255,255,255,0.6);">Every screenshot below is from a live OpsAgent deployment. This is what your operations look like when AI is running the show.</p>
+    <!-- INTEGRATIONS BANNER -->
+    <section id="integrations" style="padding: 4rem 2rem; background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #1E1B4B 100%);">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(108,58,237,0.2); border: 1px solid rgba(108,58,237,0.3); border-radius: 100px; padding: 0.4rem 1rem; font-size: 0.85rem; color: #8B5CF6; margin-bottom: 1.5rem;">50+ אינטגרציות</div>
+            <h2 style="font-size: 2.2rem; font-weight: 800; color: white; margin-bottom: 1rem;">עובד עם הכלים הקיימים שלכם</h2>
+            <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; max-width: 640px; margin: 0 auto 2rem;">WhatsApp, iMessage, Slack, Monday.com, Trello, Zoho Cliq, Gmail, Google Calendar, Notion, LinkedIn, Toggl ועוד רבים — הכל מחובר בצורה מאובטחת.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; font-size: 2rem; opacity: 0.7;">🟢 🍎 🟣 🗂️ 🟦 💬 📩 📅 📓 🔗 ⏱️ 📁</div>
+            <a href="/he/integrations" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, #6C3AED, #8B5CF6); color: white; box-shadow: 0 4px 15px rgba(108, 58, 237, 0.4); transition: all 0.3s;">ראו את כל האינטגרציות ←</a>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem;">
-            <div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 15px 50px rgba(0,0,0,0.4); transition: transform 0.3s;" class="fade-in">
-                <img src="screenshot-overview.png" alt="OpsAgent Dashboard — Operations Overview" style="width:100%; display:block;" loading="lazy">
-                <div style="padding: 1rem 1.25rem; background: rgba(255,255,255,0.03);">
-                    <div style="color: var(--white); font-weight: 600; font-size: 0.95rem;">Operations Overview</div>
-                    <div style="color: rgba(255,255,255,0.45); font-size: 0.82rem; margin-top: 0.25rem;">Active agents, alerts, and recent documents at a glance</div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label" style="color: var(--primary-light);">איך זה עובד</div>
+                <h2>חי תוך ימים, לא חודשים</h2>
+                <p>אנחנו מתחברים לכלים הקיימים שלכם ופורסים סוכני AI שמתחילים לספק תוצאות מיידית.</p>
+            </div>
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>שיחת גילוי</h3>
+                    <p>אנחנו ממפים את התפעול שלכם ב-30 דקות. אילו מחלקות עולות לכם הכי הרבה? איפה משימות נופלות בין הכיסאות?</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>פריסת סוכנים</h3>
+                    <p>אנחנו מתחברים למייל, יומן, CRM וכלי החשבונאות שלכם באמצעות OAuth מאובטח. סוכני AI עולים לאוויר תוך ימים.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>תוצאות מסופקות</h3>
+                    <p>לידים מנוהלים. חשבוניות מותאמות. תוכן מפורסם. אתם מקבלים תדרוך יומי של כל מה שצוות ה-AI שלכם השיג.</p>
                 </div>
             </div>
-            <div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 15px 50px rgba(0,0,0,0.4); transition: transform 0.3s;" class="fade-in">
-                <img src="screenshot-agents.png" alt="OpsAgent Dashboard — Agent Monitoring" style="width:100%; display:block;" loading="lazy">
-                <div style="padding: 1rem 1.25rem; background: rgba(255,255,255,0.03);">
-                    <div style="color: var(--white); font-weight: 600; font-size: 0.95rem;">Agent Monitoring</div>
-                    <div style="color: rgba(255,255,255,0.45); font-size: 0.82rem; margin-top: 0.25rem;">Live status, KPIs, and scheduling for every AI agent</div>
+        </div>
+    </section>
+
+    <!-- PROOF -->
+    <section id="proof">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">מוכח בפרודקשן</div>
+                <h2>נבנה קודם עבור החברה שלנו</h2>
+                <p>OpsAgent זה לא תיאוריה — הוא מפעיל את כל התפעול של חברת טכנולוגיה אמיתית.</p>
+            </div>
+            <div class="proof-card">
+                <div class="proof-content">
+                    <h3>מקרה בוחן MSApps</h3>
+                    <p>בנינו את OpsAgent כדי להפעיל את החברה שלנו. כל סוכן שאתם רואים כאן רץ בפרודקשן כבר חודשים, מטפל בלידים אמיתיים, חשבוניות אמיתיות, גיוס אמיתי ותוכן אמיתי במספר פלטפורמות.</p>
+                    <p>התוצאה? ערימת תפעול מלאה שרצה עם AI — מוכחת, נבדקה ומוכנה לפריסה עבור העסק שלכם.</p>
+                    <a href="/case-study" class="btn btn-primary">ראו את מקרה הבוחן המלא ←</a>
+                </div>
+                <div class="proof-metrics">
+                    <div class="metric">
+                        <div class="value">18</div>
+                        <div class="desc">מחלקות אוטומטיות</div>
+                    </div>
+                    <div class="metric">
+                        <div class="value">24/7</div>
+                        <div class="desc">תפעול תמידי</div>
+                    </div>
+                    <div class="metric">
+                        <div class="value">96%</div>
+                        <div class="desc">רווח גולמי</div>
+                    </div>
+                    <div class="metric">
+                        <div class="value">ימים</div>
+                        <div class="desc">זמן לפריסה</div>
+                    </div>
                 </div>
             </div>
-            <div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 15px 50px rgba(0,0,0,0.4); transition: transform 0.3s;" class="fade-in">
-                <img src="screenshot-approvals.png" alt="OpsAgent Dashboard — Human Approvals" style="width:100%; display:block;" loading="lazy">
-                <div style="padding: 1rem 1.25rem; background: rgba(255,255,255,0.03);">
-                    <div style="color: var(--white); font-weight: 600; font-size: 0.95rem;">Human-in-the-Loop Approvals</div>
-                    <div style="color: rgba(255,255,255,0.45); font-size: 0.82rem; margin-top: 0.25rem;">Review and authorize high-impact agent actions before execution</div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section id="screenshots" style="background:#0F172A;padding:5rem 0;">
+        <div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+            <div style="text-align:center;margin-bottom:3rem;">
+                <div style="display:inline-block;background:rgba(108,58,237,0.15);color:#8B5CF6;padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;margin-bottom:1rem;">פלטפורמה חיה</div>
+                <h2 style="font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:1rem;">ראו את OpsAgent בפעולה</h2>
+                <p style="color:rgba(255,255,255,0.6);font-size:1.1rem;max-width:560px;margin:0 auto;">נראות בזמן אמת לכל סוכן, כל הרצה, כל מדד — הכל בפלטפורמה אחת.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+                <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+                    <div style="background:rgba(108,58,237,0.2);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="width:10px;height:10px;border-radius:50%;background:#10B981;display:inline-block;"></span>
+                        <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">סקירת תפעול</span>
+                    </div>
+                    <img src="/sc_overview.jpg" alt="סקירת תפעול" style="width:100%;display:block;" loading="lazy">
+                </div>
+                <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+                    <div style="background:rgba(108,58,237,0.2);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="width:10px;height:10px;border-radius:50%;background:#6C3AED;display:inline-block;"></span>
+                        <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">היסטוריית הרצות</span>
+                    </div>
+                    <img src="/sc_history.jpg" alt="היסטוריית הרצות" style="width:100%;display:block;" loading="lazy">
+                </div>
+                <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+                    <div style="background:rgba(108,58,237,0.2);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="width:10px;height:10px;border-radius:50%;background:#F59E0B;display:inline-block;"></span>
+                        <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">מדדים ו-KPIs</span>
+                    </div>
+                    <img src="/sc_metrics.jpg" alt="מדדים ו-KPIs" style="width:100%;display:block;" loading="lazy">
+                </div>
+                <div style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+                    <div style="background:rgba(108,58,237,0.2);padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;">
+                        <span style="width:10px;height:10px;border-radius:50%;background:#3B82F6;display:inline-block;"></span>
+                        <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">הגדרות ותזמונים</span>
+                    </div>
+                    <img src="/sc_settings.jpg" alt="הגדרות ותזמונים" style="width:100%;display:block;" loading="lazy">
                 </div>
             </div>
-            <div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 15px 50px rgba(0,0,0,0.4); transition: transform 0.3s;" class="fade-in">
-                <img src="screenshot-metrics.png" alt="OpsAgent Dashboard — Metrics & KPIs" style="width:100%; display:block;" loading="lazy">
-                <div style="padding: 1rem 1.25rem; background: rgba(255,255,255,0.03);">
-                    <div style="color: var(--white); font-weight: 600; font-size: 0.95rem;">Metrics & KPIs</div>
-                    <div style="color: rgba(255,255,255,0.45); font-size: 0.82rem; margin-top: 0.25rem;">Cross-department performance tracking in real time</div>
+        </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section id="security" style="background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #0F172A 100%); padding: 5rem 2rem;">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label" style="color: var(--primary-light);">אבטחה קודם</div>
+                <h2 style="color: var(--white);">הנתונים שלכם נשארים שלכם. תמיד.</h2>
+                <p style="color: rgba(255,255,255,0.6);">בעולם שבו אבטחת מידע היא סיכון עסקי מספר 1, בנינו את OpsAgent על עיקרון אחד שלא ניתן לפשרה: הנתונים שלכם לעולם לא עוזבים את הסביבה שלכם.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
+                    <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">ארכיטקטורת Zero Trust</h4>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">כל בקשת גישה מאומתת. ללא אמון מובלע — אף פעם. הרשאות מוגדרות, מוגבלות וניתנות לביקורת.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🗄️</div>
+                    <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">ללא אחסון נתונים עסקיים</h4>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">אנחנו לא מאחסנים את הנתונים העסקיים שלכם בשרתים חיצוניים. OpsAgent מעבד ופועל — הוא לא שומר.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🔑</div>
+                    <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">גישה מוגדרת בלבד</h4>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">אינטגרציות מתחברות רק למה שנדרש. ללא הרשאות רחבות, ללא גישה נסתרת. אתם שולטים במה ש-OpsAgent יכול לראות.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📋</div>
+                    <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">מסלול ביקורת מלא</h4>
+                    <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">כל פעולה אוטומטית מתועדת. דעו בדיוק מה רץ, מתי ולמה — תמיד.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- SECURITY -->
-<section id="security" style="background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 60%, #0F172A 100%); padding: 5rem 2rem;">
-    <div class="section-inner">
-        <div class="section-header">
-            <div class="section-label" style="color: var(--primary-light);">Security First</div>
-            <h2 style="color: var(--white);">Your Data Stays Yours. Always.</h2>
-            <p style="color: rgba(255,255,255,0.6);">In a world where data security is the #1 business risk, we built OpsAgent on a single non-negotiable principle: your data never leaves your environment.</p>
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">מחירים</div>
+                <h2>שלמו על תוצאות, לא על מושבים</h2>
+                <p>בלי תשלום למשתמש. בלי מנויי כלים. רק תוצאות שמסופקות.</p>
+            </div>
+            <div style="text-align:center; margin-bottom: 2rem; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(108,58,237,0.12), rgba(16,185,129,0.08)); border-radius: 12px; border: 1px solid rgba(108,58,237,0.2);">
+                <span style="font-size: 0.85rem; color: var(--gray-500); font-weight: 500;">✦ &nbsp; דמי הקמה חד-פעמיים: <strong style="color: var(--primary);">$1,500</strong> &nbsp;·&nbsp; כולל אונבורדינג, אינטגרציה ו-30 יום ליווי צמוד &nbsp; ✦</span>
+            </div>
+            <div style="text-align:center; margin-bottom: 1.5rem; padding: 0.85rem 1.5rem; background: rgba(108,58,237,0.06); border-radius: 10px; border: 1px solid rgba(108,58,237,0.15);">
+                <span style="font-size: 0.82rem; color: var(--gray-500);">הרצות תהליך מעבר למגבלת התוכנית מחויבות ב-<strong style="color: var(--gray-700);">$0.10 להרצה</strong>.</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <h3>סטארטר</h3>
+                    <div class="price">$2,200<span>/חודש</span></div>
+                    <div class="target">עד 5 עובדים</div>
+                    <ul class="pricing-features">
+                        <li>2 מחלקות סוכני AI</li>
+                        <li>עד 20 תהליכי עבודה אוטומטיים/יום</li>
+                        <li>עד 500 הרצות/חודש</li>
+                        <li>דוחות תדרוך בוקר</li>
+                        <li>תמיכה במייל וצ׳אט</li>
+                        <li>שיחת סקירה חודשית</li>
+                    </ul>
+                    <a href="/intake" class="btn btn-outline" style="color: var(--gray-900); border-color: var(--gray-300); width: 100%; justify-content: center;">התחילו עכשיו</a>
+                </div>
+                <div class="pricing-card featured fade-in">
+                    <div class="pricing-badge">הפופולרי ביותר</div>
+                    <h3>צמיחה</h3>
+                    <div class="price">$4,400<span>/חודש</span></div>
+                    <div class="target">6–20 עובדים</div>
+                    <ul class="pricing-features">
+                        <li>כל 18 מחלקות סוכני AI</li>
+                        <li>עד 50 תהליכי עבודה אוטומטיים/יום</li>
+                        <li>עד 2,000 הרצות/חודש</li>
+                        <li>אוטומציות תהליכי עבודה מותאמות</li>
+                        <li>תמיכה בעדיפות</li>
+                        <li>מנהל הצלחה ייעודי</li>
+                        <li>שיחות אסטרטגיה שבועיות</li>
+                        <li>אינטגרציות מותאמות</li>
+                    </ul>
+                    <a href="/intake" class="btn btn-primary" style="width: 100%; justify-content: center;">קבעו דמו</a>
+                </div>
+                <div class="pricing-card fade-in">
+                    <h3>אנטרפרייז</h3>
+                    <div class="price">מותאם אישית</div>
+                    <div class="target">20+ עובדים</div>
+                    <ul class="pricing-features">
+                        <li>הכל בתוכנית צמיחה</li>
+                        <li>הרצות ללא הגבלה</li>
+                        <li>מחלקות ללא הגבלה</li>
+                        <li>אפשרות פריסה מקומית</li>
+                        <li>פיתוח סוכני AI מותאם</li>
+                        <li>ערבות SLA</li>
+                        <li>תמיכה הנדסית ייעודית</li>
+                    </ul>
+                    <a href="/intake" class="btn btn-outline" style="color: var(--gray-900); border-color: var(--gray-300); width: 100%; justify-content: center;">צרו קשר</a>
+                </div>
+            </div>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
-            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
-                <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">Zero Trust Architecture</h4>
-                <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">Every access request is verified. No implicit trust — ever. Permissions are defined, scoped, and auditable.</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 1rem;">🗄️</div>
-                <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">No Business Data Stored</h4>
-                <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">We don't store your business data on external servers. OpsAgent processes and acts — it doesn't retain.</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 1rem;">🔑</div>
-                <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">Defined Access Only</h4>
-                <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">Integrations connect only to what's needed. No broad permissions, no hidden access. You control what OpsAgent can see.</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
-                <div style="font-size: 2rem; margin-bottom: 1rem;">📋</div>
-                <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 0.5rem;">Full Audit Trail</h4>
-                <p style="color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6;">Every automated action is logged. Know exactly what ran, when, and why — always.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-    <div class="section-inner">
-        <div class="section-header">
-            <div class="section-label">Pricing</div>
-            <h2>Pay for Outcomes, Not Seats</h2>
-            <p>No per-seat fees. No tool subscriptions. Just results delivered.</p>
-        </div>
-        <div style="text-align:center; margin-bottom: 2rem; padding: 1rem 1.5rem; background: linear-gradient(135deg, rgba(108,58,237,0.12), rgba(16,185,129,0.08)); border-radius: 12px; border: 1px solid rgba(108,58,237,0.2);">
-            <span style="font-size: 0.85rem; color: var(--gray-600); font-weight: 500;">✦ &nbsp; One-time setup fee: <strong style="color: var(--primary);">$1,500</strong> &nbsp;·&nbsp; Includes onboarding, integration, and 30-day hands-on support &nbsp; ✦</span>
-        </div>
-        <div style="text-align:center; margin-bottom: 1.5rem; padding: 0.85rem 1.5rem; background: rgba(108,58,237,0.06); border-radius: 10px; border: 1px solid rgba(108,58,237,0.15);">
-            <span style="font-size: 0.82rem; color: var(--gray-500);">Additional workflow runs beyond plan limits are billed at <strong style="color: var(--gray-700);">$0.10 per run</strong>.</span>
-        </div>
-        <div class="pricing-grid">
-            <div class="pricing-card fade-in">
-                <h3>Starter</h3>
-                <div class="price">$2,200<span>/mo</span></div>
-                <div class="target">Up to 5 employees</div>
-                <ul class="pricing-features">
-                    <li>2 AI agent departments</li>
-                    <li>Up to 20 automated workflows/day</li>
-                    <li>Up to 500 workflow runs/month</li>
-                    <li>Morning briefing reports</li>
-                    <li>Email & chat support</li>
-                    <li>Monthly review call</li>
-                </ul>
-                <a href="/intake" class="btn btn-outline" style="color: var(--gray-900); border-color: var(--gray-300); width: 100%; justify-content: center;">Get Started</a>
-            </div>
-            <div class="pricing-card featured fade-in">
-                <div class="pricing-badge">Most Popular</div>
-                <h3>Growth</h3>
-                <div class="price">$4,400<span>/mo</span></div>
-                <div class="target">6–20 employees</div>
-                <ul class="pricing-features">
-                    <li>All 18 AI agent departments</li>
-                    <li>Up to 50 automated workflows/day</li>
-                    <li>Up to 2,000 workflow runs/month</li>
-                    <li>Custom workflow automations</li>
-                    <li>Priority support</li>
-                    <li>Dedicated success manager</li>
-                    <li>Weekly strategy calls</li>
-                    <li>Custom integrations</li>
-                </ul>
-                <a href="/intake" class="btn btn-primary" style="width: 100%; justify-content: center;">Book a Demo</a>
-            </div>
-            <div class="pricing-card fade-in">
-                <h3>Enterprise</h3>
-                <div class="price">Custom</div>
-                <div class="target">20+ employees</div>
-                <ul class="pricing-features">
-                    <li>Everything in Growth</li>
-                    <li>Unlimited workflow runs</li>
-                    <li>Unlimited departments</li>
-                    <li>On-premise deployment option</li>
-                    <li>Custom AI agent development</li>
-                    <li>SLA guarantee</li>
-                    <li>Dedicated engineering support</li>
-                </ul>
-                <a href="/intake" class="btn btn-outline" style="color: var(--gray-900); border-color: var(--gray-300); width: 100%; justify-content: center;">Contact Sales</a>
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="section-inner">
+            <h2>מוכנים להחליף את הבק-אופיס שלכם<br>ב-AI שבאמת עובד?</h2>
+            <p>הצטרפו לבטא הפרטית שלנו. מוכוון תוצאות. בטלו בכל עת.</p>
+            <div class="cta-buttons">
+                <a href="/intake" class="btn btn-accent btn-lg">קבעו דמו</a>
+                <a href="/intake" class="btn btn-outline btn-lg">התחילו מיפוי</a>
             </div>
         </div>
-        
-    </div>
-</section>
+    </section>
 
-<!-- CTA -->
-<section class="cta" id="contact">
-    <div class="section-inner">
-        <h2>Ready to Replace Your Back-Office<br>With AI That Actually Works?</h2>
-        <p>Join our private beta. Results-driven. Cancel anytime.</p>
-        <div class="cta-buttons">
-            <a href="/intake" class="btn btn-accent btn-lg">Book a Demo</a>
-            <a class='btn btn-outline btn-lg' href='/intake'>Start Mapping</a>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <p class="footer-text">&copy; 2026 OpsAgent. כל הזכויות שמורות.</p>
+            <div class="footer-links">
+                <a href="/intake">צרו קשר</a>
+                <a href="#">פרטיות</a>
+                <a href="#">תנאי שימוש</a>
+                <a href="../" class="lang-switch">🌐 English</a>
+            </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- FOOTER -->
-<footer>
-    <div class="footer-inner">
-        <div class="footer-text">&copy; 2026 OpsAgent. All rights reserved.</div>
-        <div class="footer-links">
-            <a href="#sosa">SOSA&trade; Framework</a>
-            <a href="mailto:michal@msapps.mobi">Contact</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Fade in on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
-    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 </html>
