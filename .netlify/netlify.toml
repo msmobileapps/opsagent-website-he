@@ -55,8 +55,20 @@ Cache-Control = "public, max-age=86400"
 
 [[redirects]]
 from = "/he/*"
-to = "/he/:splat"
-status = 200.0
+to = "/:splat"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/he"
+to = "/"
+status = 301.0
 force = false
 
 [redirects.query]
