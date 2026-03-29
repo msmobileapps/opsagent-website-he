@@ -354,12 +354,36 @@ app.get('/api/health', async (req, res) => {
   res.json({ clients: results });
 });
 
-// ── Cowork Tasks API ────────────────────────────────────────────────────────
+// ── Cowork Sync + Tasks API ─────────────────────────────────────────────────
 
-// List all Cowork scheduled tasks
+// Last synced snapshot from the Mac (received via cowork-sync.js)
+let coworkSnapshot = null;
+
+// Receive sync push from the Mac's cowork-sync daemon
+app.post('/api/cowork/sync', (req, res) => {
+  coworkSnapshot = req.body;
+  coworkSnapshot.receivedAt = new Date().toISOString();
+  console.log(`[sync] Received snapshot: ${coworkSnapshot.taskCount} tasks from ${coworkSnapshot.hostname}`);
+  res.json({ ok: true, taskCount: coworkSnapshot.taskCount });
+});
+
+// Get the last synced snapshot (for dashboard when Mac is offline)
+app.get('/api/cowork/snapshot', (req, res) => {
+  if (!coworkSnapshot) {
+    // Try to read from local bridge as fallback
+    const tasks = listCoworkTasks();
+    return res.json({ tasks, source: 'local', timestamp: new Date().toISOString() });
+  }
+  res.json({ ...coworkSnapshot, source: 'sync' });
+});
+
+// List all Cowork scheduled tasks (prefers synced snapshot, falls back to local)
 app.get('/api/cowork/tasks', (req, res) => {
+  if (coworkSnapshot) {
+    return res.json({ tasks: coworkSnapshot.tasks, source: 'sync' });
+  }
   const tasks = listCoworkTasks();
-  res.json({ tasks });
+  res.json({ tasks, source: 'local' });
 });
 
 // Get a single task with full details
