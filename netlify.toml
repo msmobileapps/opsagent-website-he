@@ -1,15 +1,14 @@
 [build]
-  base = "dashboard"
-  command = "npm install && npm run build"
-  publish = "out"
+  publish = "."
+  command = "echo 'Static site — no build needed'"
 
 [build.environment]
   NODE_VERSION = "20"
 
-# SPA fallback for client-side routing
+# Hebrew default, English via ?lang=en
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/he/*"
+  to = "/he/:splat"
   status = 200
 
 [[headers]]
@@ -19,8 +18,17 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Cache static assets
 [[headers]]
-  for = "/_next/static/*"
+  for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
